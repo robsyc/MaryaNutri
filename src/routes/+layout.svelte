@@ -20,7 +20,7 @@
 
 <ModeWatcher />
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+<nav class="fixed top-0 left-0 right-0 z-50 shadow-md bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 	<div class="container flex h-20 items-center justify-between">
 
 		<div class="flex items-center gap-6">
@@ -29,7 +29,7 @@
 				src={$mode === 'dark' ? '/maryaporr-logo-square_white.png' : '/maryaporr-logo-square.png'}
 				alt="MaryaNutri" class="h-20 w-auto p-1" />
 			</a>
-			<ul class="hidden md:flex items-center gap-6">
+			<ul class="hidden md:flex items-center gap-8">
 				{#each navItems as item}
 					<li><a href={item.href} class="text-lg font-medium transition-colors hover:text-primary">{item.label}</a></li>
 				{/each}
@@ -83,6 +83,53 @@
 	{@render children()}
 </main>
 
-<footer class="bg-accent">
-	<p>Footer</p>
-</footer>
+<footer class="bg-accent py-10">
+	<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+	  
+	  <!-- About Section -->
+	  <div>
+		<h3 class="text-xl font-semibold mb-4">About Us</h3>
+		<p class="">
+		  We are dedicated to providing the best services to help you achieve success.
+		</p>
+	  </div>
+	  
+	  <!-- Links Section -->
+	  <div>
+		<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+		<ul class="space-y-2">
+		  <li><a href="/" class="hover:text-white">Home</a></li>
+		  <li><a href="/products" class="hover:text-white">Products</a></li>
+		  <li><a href="/about" class="hover:text-white">About</a></li>
+		  <li><a href="/contact" class="hover:text-white">Contact</a></li>
+		</ul>
+	  </div>
+	  
+	  <!-- Contact Section -->
+	  <div>
+		<h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+		<p class="">Email: info@example.com</p>
+		<p class="">Phone: (123) 456-7890</p>
+	  </div>
+	  
+	  <!-- Social Media Section -->
+	  <div>
+		<h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+		<div class="flex space-x-4">
+		  <a href="#" class=" hover:text-white">
+			<Sun class="h-6 w-6" />
+		  </a>
+		  <a href="#" class=" hover:text-white">
+			<Moon class="h-6 w-6" />
+		  </a>
+		  <a href="#" class=" hover:text-white">
+			<Menu class="h-6 w-6" />
+		  </a>
+		</div>
+	  </div>
+	  
+	</div>
+	<div class="mt-8 text-center ">
+	  &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+	</div>
+  </footer>
