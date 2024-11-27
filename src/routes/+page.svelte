@@ -68,7 +68,7 @@
             CHILDREN ARE <span class="underline underline-offset-8">DYING</span> !
         </h1>
 
-        <div class="my-20 container mx-auto md:px-32 lg:px-64">
+        <div class="my-16 lg:my-32 container mx-auto md:px-32 lg:px-64">
             <Card.Root class="mx-auto max-w-screen reveal-card">
                 <Card.Header>
                 <Card.Title class="text-3xl">
@@ -82,7 +82,7 @@
         </div>
 
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-20 mt-28 mb-24 text-3xl">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-20 my-24 text-3xl">
             <div class=p-3>
                 <p>OF DEATHS AMONG CHILDREN UNDER 5</p>
                 <p class="text-7xl my-4 text-red-700">
