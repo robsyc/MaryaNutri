@@ -18,7 +18,7 @@
 	let showNotification = $state(true);
 
 	const navItems = [
-		{ label: "Homepage", href: "/" },
+		{ label: "Home", href: "/" },
 		{ label: "Products", href: "/products" },
 		{ label: "About Us", href: "/about" },
 	];
@@ -29,14 +29,14 @@
 
 <nav class="fixed top-0 left-0 right-0 z-50 shadow-md bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
 	{#if showNotification}
-	<div class="bg-accent">
-		<div class="md:container md:mx-auto px-4 flex h-9 items-center justify-between bg-accent text-accent-foreground">
-			<p>MaryaNutri was featured in the Brussels Times!
+	<div class="bg-primary/90">
+		<div class="md:container md:mx-auto p-2 flex h-auto items-center justify-between text-primary-foreground">
+			<p>MaryaNutri was featured in a Brussels Times article!
 				<a href="https://www.brusselstimes.com/1313990/from-starvation-to-solution-kenyan-phd-student-in-belgium-fights-to-end-global-malnutrition-with-insect-fortified-foods" 
-				class="underline hover:text-primary duration-300" target="_blank" rel="noopener noreferrer">Read More</a>
+				class="underline hover:text-accent-foreground/60 duration-300" target="_blank" rel="noopener noreferrer">Read More</a>
 			</p>
 			<button onclick={() => showNotification = false}>
-				<CircleX class="h-5 w-5 hover:text-accent-foreground/60 duration-300" />
+				<CircleX class="h-5 w-5 ml-3 hover:text-accent-foreground/60 duration-300" />
 			</button>
 		</div>
 	</div>
@@ -229,7 +229,7 @@
 
 <!-- more space when showNotification is true -->
 <main 
-	class:mt-24={showNotification}
+	class:mt-32={showNotification}
 	class:mt-16={!showNotification}
 >
 	{@render children()}
@@ -287,4 +287,4 @@
 	<div class="text-center ">
 	  &copy; {new Date().getFullYear()} Your Company. All rights reserved.
 	</div>
-  </footer>
+</footer>
