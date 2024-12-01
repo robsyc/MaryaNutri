@@ -52,7 +52,7 @@
 <div class="bg-cover bg-no-repeat bg-scroll lg:bg-fixed"
 style="background-image: url('/hero.jpg');"
 >
-<section class="min-h-screen py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
+<section class="min-h-screen bg-scroll py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
     <div class="container mx-auto px-5 mt-4">
         <div class="flex flex-col items-center text-center md:max-w-xl mx-auto my-auto">
             <!-- Logo -->
