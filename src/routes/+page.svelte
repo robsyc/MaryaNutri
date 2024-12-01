@@ -52,8 +52,7 @@
 <div class="min-h-screen bg-cover bg-no-repeat bg-fixed"
 style="background-image: url('/hero.jpg');"
 >
-<section class="min-h-screen">
-    <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed flex items-center justify-center bg-background/65 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
+<section class="min-h-screen py-10 overflow-hidden bg-fixed flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
     <div class="container mx-auto px-5 mt-4">
         <div class="flex flex-col items-center text-center md:max-w-xl mx-auto my-auto">
             <!-- Logo -->
@@ -61,9 +60,9 @@ style="background-image: url('/hero.jpg');"
                 <img
                     src={$mode === 'dark' ? '/logo_dark.png' : '/logo_light.png'}
                     alt="MaryaNutri"
-                    class="h-48 w-auto py-4 mt-4"/>
+                    class="h-48 w-auto"/>
             </a>
-            <h1 class="text-5xl font-bold my-5">
+            <h1 class="text-4xl md:text-5xl font-bold my-5">
                 END MALNUTRITION, <span class="underline underline-offset-8">SAVE LIVES</span>
             </h1>
             <p class="font-light text-accent-foreground/90 my-5">
@@ -76,14 +75,13 @@ style="background-image: url('/hero.jpg');"
             <p class="pt-3 font-extralight">SCROLL DOWN</p>
         </div>
     </div>
-    </div>
 </section>
 
 <!-- Children are dying -->
 <section class="min-h-screen flex items-center justify-center bg-background">
     <div class="text-center pt-8 md:pt-20 lg:pt-40">
-        <h1 class="text-6xl font-bold mb-4 px-4">
-            CHILDREN ARE <span class="underline underline-offset-8">DYING</span> !
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 px-4">
+            CHILDREN ARE <span class="underline underline-offset-8">DYING</span>!
         </h1>
 
         <div class="my-16 lg:my-32 container mx-auto md:px-32 lg:px-64">
@@ -130,7 +128,7 @@ style="background-image: url('/hero.jpg');"
         <div class="mb-2 md:mx-4 md:mb-8" >
             <Popover.Root>
                 <Popover.Trigger>
-                    <Info size={50} />
+                    <Info size={48} />
                 </Popover.Trigger>
                 <Popover.Content>
                     These statistics are based on the latest data from the <a href="https://www.who.int/news-room/fact-sheets/detail/malnutrition" target="_blank" class="underline">World Health Organization</a>.
@@ -161,7 +159,7 @@ style="background-image: url('/hero.jpg');"
                     </div>
                     <div>
                         <Card.Header>
-                            <Card.Title class="text-foreground/90 text-lg italic font-semibold">
+                            <Card.Title class="text-foreground/90 text-lg italic font-semibold text-justify">
                                 Growing up in Kenya, twice I almost died because of hunger and malnutrition. It was at age 6 I decided I wanted to solve malnutrition.
                             </Card.Title>
                             <Card.Description class="text-accent-foreground/80">
