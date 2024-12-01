@@ -228,10 +228,7 @@
 </nav>
 
 <!-- more space when showNotification is true -->
-<main 
-	class:mt-32={showNotification}
-	class:mt-16={!showNotification}
->
+<main class="">
 	{@render children()}
 </main>
 
