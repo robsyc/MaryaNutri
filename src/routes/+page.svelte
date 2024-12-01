@@ -80,7 +80,7 @@ style="background-image: url('/hero.jpg');"
 <!-- Children are dying -->
 <section class="min-h-screen flex items-center justify-center bg-background">
     <div class="text-center pt-8 md:pt-20 lg:pt-40">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 px-4">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 px-4">
             CHILDREN ARE <span class="underline underline-offset-8">DYING</span>!
         </h1>
 
