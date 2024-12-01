@@ -60,7 +60,7 @@ style="background-image: url('/hero.jpg');"
                 <img
                     src={$mode === 'dark' ? '/logo_dark.png' : '/logo_light.png'}
                     alt="MaryaNutri"
-                    class="h-48 w-auto"/>
+                    class="h-36 md:h-48 w-auto"/>
             </a>
             <h1 class="text-4xl md:text-5xl font-bold my-5">
                 END MALNUTRITION, <span class="underline underline-offset-8">SAVE LIVES</span>
