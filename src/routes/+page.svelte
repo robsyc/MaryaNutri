@@ -49,10 +49,10 @@
 </script>
 
 <!-- Hero page -->
-<div class="min-h-screen bg-cover bg-no-repeat bg-fixed"
+<div class="bg-cover bg-no-repeat bg-scroll lg:bg-fixed"
 style="background-image: url('/hero.jpg');"
 >
-<section class="min-h-screen py-10 overflow-hidden bg-fixed flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
+<section class="min-h-screen py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
     <div class="container mx-auto px-5 mt-4">
         <div class="flex flex-col items-center text-center md:max-w-xl mx-auto my-auto">
             <!-- Logo -->
@@ -163,7 +163,7 @@ style="background-image: url('/hero.jpg');"
                                 Growing up in Kenya, twice I almost died because of hunger and malnutrition. It was at age 6 I decided I wanted to solve malnutrition.
                             </Card.Title>
                             <Card.Description class="text-accent-foreground/80">
-                                ~ Our Founder, <a href="https://www.linkedin.com/in/maryam-imbumi-11113b79/" target="_blank" class="underline"> Maryam Imbumi</a>
+                                Our Founder, <a href="https://www.linkedin.com/in/maryam-imbumi-11113b79/" target="_blank" class="underline"> Maryam Imbumi</a>
                             </Card.Description>
                         </Card.Header>
                         <Card.Content>
