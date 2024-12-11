@@ -85,14 +85,15 @@ const config: Config = {
 				'scroll-line': {
 					'0%': { transform: 'scaleY(0) translateY(0)', opacity: '1' },
 					'60%': { transform: 'scaleY(1) translateY(0)', opacity: '1' },
-					'100%': { transform: 'scaleY(0) translateY()', opacity: '0' },
+					'80%': { transform: 'scaleY(1) translateY(0)', opacity: '1' },
+					'100%': { transform: 'scaleY(1) translateY(0)', opacity: '0' },
 				  },
 			},
 			animation: {
         		"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
        			"caret-blink": "caret-blink 1.25s ease-out infinite",
-			   'scroll-line': 'scroll-line 3s ease-in-out infinite',
+			   	"scroll-line": "scroll-line 3s ease-in-out infinite",
 			},
 		},
 	},

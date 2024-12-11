@@ -49,11 +49,11 @@
 </script>
 
 <!-- Hero page -->
-<div class="bg-cover bg-no-repeat bg-fixed"
+<div class="bg-cover bg-no-repeat bg-fixed lg:bg-center"
 style="background-image: url('/hero.jpg');"
 >
 <section class="min-h-screen bg-scroll py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
-    <div class="container mx-auto px-5 mt-4">
+    <div class="container mx-auto px-6 mt-4">
         <div class="flex flex-col items-center text-center md:max-w-xl mx-auto my-auto">
             <!-- Logo -->
             <a href="/">
@@ -63,7 +63,7 @@ style="background-image: url('/hero.jpg');"
                     class="h-36 md:h-48 w-auto"/>
             </a>
             <h1 class="text-4xl md:text-5xl font-bold my-5">
-                END MALNUTRITION, <span class="underline underline-offset-8">SAVE LIVES</span>
+                END MALNUTRITION, <br> <span class="underline underline-offset-8">SAVE LIVES</span>
             </h1>
             <p class="font-light text-accent-foreground/90 my-5">
                 MaryaNutri© creates highly nutritious innovative insect-fortified foods to treat severe acute malnutrition in children.
@@ -184,10 +184,44 @@ style="background-image: url('/hero.jpg');"
 
 <section class="py-20 bg-background">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold mb-6">About Us</h2>
+        <h2 class="text-3xl font-semibold mb-6">Insects are highly nutritious and sustainable food sources!</h2>
         <p class="">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus.
         </p>
+    </div>
+</section>
+
+<section class="py-20 overflow-hidden bg-fixed flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
+    <div class="container-sm mx-auto md:px-4">
+        <div class="my-16 lg:my-32 container mx-auto md:px-32 lg:px-64">
+            <Card.Root class="mx-auto max-w-screen reveal-card">
+                <div class="md:flex items-center">
+                    <div class="my-auto mx-auto md:ml-4 pt-6 md:py-8 md:px-6">
+                        <Avatar.Root class="w-20 h-20 mx-auto">
+                            <Avatar.Image src="https://media.licdn.com/dms/image/v2/D4E03AQG5kJL-nrCClQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729943416940?e=1735171200&v=beta&t=o4Xe_lDjZngjohVdXr_w-JQVFq3Z1lh7dttWKBs_wbM" alt="Maryam Imbumi" />
+                            <Avatar.Fallback>CN</Avatar.Fallback>
+                        </Avatar.Root>
+                    </div>
+                    <div>
+                        <Card.Header>
+                            <Card.Title class="text-foreground/90 text-lg italic font-semibold text-justify">
+                                Growing up in Kenya, twice I almost died because of hunger and malnutrition. It was at age 6 I decided I wanted to solve malnutrition.
+                            </Card.Title>
+                            <Card.Description class="text-accent-foreground/80">
+                                Our Founder, <a href="https://www.linkedin.com/in/maryam-imbumi-11113b79/" target="_blank" class="underline"> Maryam Imbumi</a>
+                            </Card.Description>
+                        </Card.Header>
+                        <Card.Content>
+                            Learn more about MaryaNutri© and how we are working to end malnutrition.
+                        </Card.Content>
+                        <Card.Footer>
+                            <Button href="/products" class="mx-auto md:mx-0 md:mr-4">Our Products</Button>
+                            <Button href="/about" variant="secondary" class="mx-auto md:mx-0">About Us</Button>
+                        </Card.Footer>
+                    </div>
+                </div>
+            </Card.Root>
+        </div>
     </div>
 </section>
 
