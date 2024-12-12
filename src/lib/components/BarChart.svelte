@@ -1,10 +1,6 @@
 <script>
-    import Rect from './Rect.svelte';
     import { scaleLinear } from 'd3-scale';
-  
-    import { tweened } from 'svelte/motion';
-    import { cubicOut } from 'svelte/easing';
-    import { interpolate } from 'd3-interpolate';
+    import Rect from './Rect.svelte';
 
     // Props
     let {
@@ -14,7 +10,7 @@
         yLabel = ''
     } = $props();
 
-    // Dimensions
+    // Dimensions & Scaling
     const padding = { top: 20, right: 15, bottom: 20, left: 25 };
     let width = $state(500);
     let height = 350;
@@ -26,7 +22,7 @@
     );
 
     let yScale = scaleLinear()
-        .domain([0, Math.max.apply(null, yTicks)])
+        .domain([0, Math.max(...yTicks)])
         .range([height - padding.bottom, padding.top]);
 
     let innerWidth = $derived(width - (padding.left + padding.right));
@@ -38,16 +34,15 @@
     <!-- Bars -->
     <g class="bars">
         {#each data as { value, color }, i}
-        <rect
-            x={xScale(i) + 8}
-            y={yScale(value)}
-            width={barWidth * 0.8}
-            height={yScale(0) - yScale(value)}
-            fill={color || '#fcd34d'}
-            stroke="none"
-            />
+          <Rect
+            value={value}
+            xScale={xScale}
+            yScale={yScale}
+            barWidth={barWidth}
+            color={color}
+            i={i}
+          />
         {/each}
-        <!-- TODO add animation using Rect.svelte as non-svelte-5 inspiration -->
     </g>
 
     <!-- Y Axis -->

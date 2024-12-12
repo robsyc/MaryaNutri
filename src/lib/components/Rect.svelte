@@ -2,13 +2,13 @@
     import { tweened } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
     import { interpolate } from 'd3-interpolate';
-  
-    export let x;
-    export let y;
+
+    export let value;
+    export let xScale;
     export let yScale;
-    export let width;
+    export let barWidth;
+    export let color;
     export let i;
-    export let fill;
   
     const tY = tweened(0, {
       delay: i * 200,
@@ -17,13 +17,13 @@
       interpolate,
     });
   
-    $: tY.set(y);
+    $: tY.set(value);
 </script>
   
 <rect
-    x={x}
+    x={xScale(i) + 8}
     y={yScale($tY)}
-    width={width}
+    width={barWidth * 0.8}
     height={yScale(0) - yScale($tY)}
-    fill={fill}
+    fill={color || '#fcd34d'}
     stroke="none" />

@@ -12,7 +12,7 @@
     });
 
     import { mode } from "mode-watcher";
-    import { Info } from 'lucide-svelte';
+    import { Divide, Info } from 'lucide-svelte';
 
     import { ChevronDown } from 'lucide-svelte';
     import { Button } from "$lib/components/ui/button/index.js";
@@ -21,6 +21,8 @@
     import { Progress } from "$lib/components/ui/progress/index.js";
     import * as Popover from "$lib/components/ui/popover/index.js";
     import * as Avatar from "$lib/components/ui/avatar/index.js";
+    import BarChart from '$lib/components/BarChart.svelte';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
     
     let count: number = 0;
     let progress: number = 0;
@@ -46,6 +48,17 @@
         clearInterval(progressInterval);
         clearInterval(countInterval);
     });
+
+    // Chart data
+    const chart_labels = ['Cow', 'Pig', 'Chicken', 'Cricket', 'Mealworm'];
+    const water_data = [
+      { value: 22, color: '#ff4c4c' },
+      { value: 20, color: '#ff7f00' },
+      { value: 16, color: '#ffe700' },
+      { value: 10, color: '#8cff00' },
+      { value: 9, color: '#00ffff' },
+    ];
+    const water_yTicks = [0, 5, 10, 15, 20, 25];
 </script>
 
 <!-- Hero page -->
@@ -131,7 +144,7 @@ style="background-image: url('/hero.jpg');"
                     <Info size={48} />
                 </Popover.Trigger>
                 <Popover.Content>
-                    These statistics are based on the latest data from the <a href="https://www.who.int/news-room/fact-sheets/detail/malnutrition" target="_blank" class="underline">World Health Organization</a>.
+                    These statistics are based on the latest data from the <a href="https://www.who.int/news-room/fact-sheets/detail/malnutrition" target="_blank" class="underline">World Health Organization (WHO)</a>
                 </Popover.Content>
             </Popover.Root>
         </div>
@@ -143,7 +156,6 @@ style="background-image: url('/hero.jpg');"
         </div>
     </div>
 </section>
-
 
 
 <section class="py-20 overflow-hidden bg-fixed flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
@@ -181,13 +193,48 @@ style="background-image: url('/hero.jpg');"
 </section>
 
 
-
 <section class="py-20 bg-background">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-semibold mb-6">Insects are highly nutritious and sustainable food sources!</h2>
-        <p class="">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus.
-        </p>
+    <div class="container mx-auto md:px-4">
+      <h2 class="text-4xl font-semibold mb-16">
+        Insects are highly nutritious and sustainable food sources!
+      </h2>
+  
+      <!-- Water Consumption Chart -->
+      <div class="flex flex-col md:flex-row md:items-center mb-10">
+        <div class="md:w-1/2 md:pl-6 text-center p-3">
+            <h3 class="text-2xl font-semibold mb-4">Water Consumption</h3>
+            <p class="text-lg">Insects require significantly less water than traditional livestock.</p>
+        </div>
+        <div class="md:w-1/2 py-4">
+            <BarChart data={water_data} labels={chart_labels} yTicks={water_yTicks} yLabel="Litres (L)" />
+        </div>
+      </div>
+
+      <Separator class="my-10" />
+  
+      <!-- Land Use Chart -->
+      <div class="flex flex-col md:flex-row md:items-center mb-10">
+        <div class="md:w-1/2 md:pl-6 text-center p-3">
+            <h3 class="text-2xl font-semibold mb-4">Land Use</h3>
+            <p class="text-lg">Insect farming uses less land area compared to traditional farming.</p>
+        </div>
+        <div class="md:w-1/2 py-4">
+            <BarChart data={water_data} labels={chart_labels} yTicks={water_yTicks} yLabel="Square Metres (m²)" />
+        </div>
+      </div>
+
+      <Separator class="my-10" />
+  
+      <!-- CO₂ Emissions Chart -->
+      <div class="flex flex-col md:flex-row md:items-center">
+        <div class="md:w-1/2 md:pl-6 text-center p-3">
+            <h3 class="text-2xl font-semibold mb-4">CO₂ Emissions</h3>
+            <p class="text-lg">Insect protein production emits fewer greenhouse gases.</p>
+        </div>
+        <div class="md:w-1/2 py-4">
+            <BarChart data={water_data} labels={chart_labels} yTicks={water_yTicks} yLabel="CO₂ Emissions (kg)" />
+        </div>
+      </div>
     </div>
 </section>
 
