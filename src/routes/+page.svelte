@@ -12,7 +12,7 @@
     });
 
     import { mode } from "mode-watcher";
-    import { Divide, Info } from 'lucide-svelte';
+    import { Info } from 'lucide-svelte';
 
     import { ChevronDown } from 'lucide-svelte';
     import { Button } from "$lib/components/ui/button/index.js";
@@ -225,7 +225,7 @@ style="background-image: url('/hero.jpg');"
                 It's that low!
             </p>
         </div>
-        <div class="md:w-1/2 py-4">
+        <div class="md:w-1/2 py-4 mt-8">
             <BarChart data={water_data} labels={chart_labels} yTicks={water_yTicks} yLabel="Litres (L)" />
         </div>
       </div>
@@ -241,7 +241,7 @@ style="background-image: url('/hero.jpg');"
                 While beef requires 200m² - crickets only need 15m²
             </p>
         </div>
-        <div class="md:w-1/2 py-4">
+        <div class="md:w-1/2 py-4 mt-8">
             <BarChart data={land_data} labels={chart_labels} yTicks={land_yTicks} yLabel="Square Metres (m²)" />
         </div>
       </div>
@@ -257,7 +257,7 @@ style="background-image: url('/hero.jpg');"
                 On average, insects emit 100 times less CO₂ than cattle.
             </p>
         </div>
-        <div class="md:w-1/2 py-4">
+        <div class="md:w-1/2 py-4 mt-8">
             <BarChart data={co2_data} labels={chart_labels} yTicks={co2_yTicks} yLabel="CO₂ Emissions (kg) per 1kg of meat" />
         </div>
       </div>

@@ -5,7 +5,7 @@
 </script>
 
 <div class="container mb-12">
-    <h1 class="text-4xl md:text-5xl font-bold pt-10">Our products</h1>
+    <h1 class="text-4xl md:text-5xl font-bold pt-14 md:pt-10">Our products</h1>
     <p class="p-1 my-5">
         If you are interested in purchasing our products, please <a class="underline underline-offset-2 hover:text-primary duration-300" href="mailto:contact@maryanutri.com">contact us</a>.
         We will get back to you as soon as possible. 
