@@ -11,6 +11,7 @@
 	import { Textarea } from "$lib/components/ui/textarea";
 	import { Separator } from "$lib/components/ui/separator/index.js";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+	import Card from "$lib/components/ui/card/card.svelte";
 
 	let { children } = $props();
 
@@ -22,10 +23,17 @@
 		{ label: "Products", href: "/products" },
 		{ label: "About Us", href: "/about" },
 	];
+
+	let name = $state('');
+	let email = $state('');
+	let message = $state('');
+	let dialogOpen = $state(false);
+
+	// Handle form submission
+	// ...
 </script>
 
 <ModeWatcher />
-
 
 <nav class="fixed top-0 left-0 right-0 z-50 shadow-md bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
 	{#if showNotification}
@@ -52,7 +60,7 @@
 			</a>
 
 			<!-- Contact Us button -->
-			<Dialog.Root>
+			<Dialog.Root bind:open={dialogOpen}>
 				<Dialog.Trigger class="mx-1">
 					<Button>Contact Us</Button>
 				</Dialog.Trigger>
@@ -64,10 +72,11 @@
 					  </Dialog.Description>
 					</Dialog.Header>
 					<form class="space-y-4">
-						<Input placeholder="Your Name" required />
-						<Input type="email" placeholder="Your Email" required />
-						<Textarea placeholder="Type your message here" required />
-						<Button type="submit">Send Message</Button>
+						<Input bind:value={name} placeholder="Your Name" required />
+						<Input type="email" bind:value={email} placeholder="Your Email" required />
+						<Textarea bind:value={message} placeholder="Type your message here" required />
+						<Button disabled onclick={() => dialogOpen = false} type="submit">Send Message</Button>
+						<p class="text-destructive">WARNING: This form is not yet functional! Contact us through contact@maryanutri.com</p>
 					</form>
 				</Dialog.Content>
 			</Dialog.Root>

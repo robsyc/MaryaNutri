@@ -25,11 +25,13 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"lucide-svelte": "^0.460.1",
+		"mode-watcher": "^0.5.0",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"svelte-intersection-observer": "^1.0.0",
+		"svelte-sonner": "^0.3.28",
 		"tailwind-merge": "^2.5.4",
 		"tailwind-variants": "^0.3.0",
 		"tailwindcss": "^3.4.9",
@@ -44,7 +46,6 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"d3-interpolate": "^3.0.1",
 		"d3-scale": "^4.0.2",
-		"mode-watcher": "^0.5.0",
 		"scrollreveal": "^4.0.9",
 		"svelte-motion": "^0.12.2"
 	}
