@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { scaleLinear } from 'd3-scale';
   import Rect from './Rect.svelte';
@@ -28,21 +28,21 @@
   let barWidth = $derived(innerWidth / data.length);
 
   let chartVisible = $state(false); // Reactive flag to track visibility
+  let chartElement: HTMLElement; // Reference to this chart's element
 
   onMount(() => {
-      const chart = document.querySelector('.chart');
       const observer = new IntersectionObserver(([entry]) => {
-          if (entry.isIntersecting) {
-              chartVisible = true;
-              observer.disconnect(); // Stop observing after first visibility
-          }
+          chartVisible = entry.isIntersecting;
       }, { threshold: 0.1 });
 
-      observer.observe(chart);
+      if (chartElement) {
+          observer.observe(chartElement);
+          return () => observer.disconnect(); // Cleanup on component destroy
+      }
   });
 </script>
 
-<div class="chart" bind:clientWidth={width}>
+<div class="chart" bind:clientWidth={width} bind:this={chartElement}>
   <svg {width} {height} class="bg-background">
       <g class="bars">
           {#each data as { value, color }, i}
