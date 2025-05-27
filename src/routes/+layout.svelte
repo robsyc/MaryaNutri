@@ -62,7 +62,14 @@
 			<!-- Contact Us button -->
 			<Dialog.Root bind:open={dialogOpen}>
 				<Dialog.Trigger class="mx-1">
-					<Button>Contact Us</Button>
+					<!-- <Button>Contact Us</Button> 
+					This avoid "... cannot contain button" warning
+					-->
+					{#snippet child({ props })}
+						<div {...props} class={`${buttonVariants({ variant: "default", size: "default" })}`}>
+							Contact Us
+						</div>
+					{/snippet}
 				</Dialog.Trigger>
 				<Dialog.Content>
 					<Dialog.Header>
@@ -116,11 +123,18 @@
 			<!-- Theme button desktop -->
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger class="hidden md:flex">
-				  <Button variant="outline" size="icon">
+				  <!-- <Button variant="outline" size="icon">
 					<Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
 					<Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
 					<span class="sr-only">Toggle theme</span>
-				  </Button>
+				  </Button> FIX warning!!! -->
+				  	{#snippet child({ props })}
+						<div {...props} class={buttonVariants({ variant: "outline", size: "icon" })}>
+							<Sun class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
+							<Moon class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
+							<span class="sr-only">Toggle theme</span>
+						</div>
+			  	  	{/snippet}
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
 					<DropdownMenu.Group>
@@ -142,9 +156,14 @@
 			<!-- Language buttom -->
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
-					<Button variant="outline" size="icon">
+					<!-- <Button variant="outline" size="icon">
 						<Languages class="h-6 w-6" />
-					</Button>
+					</Button> FIX warning!!! -->
+					{#snippet child({ props })}
+						<div {...props} class={buttonVariants({ variant: "outline", size: "icon" })}>
+							<Languages class="h-6 w-6" />
+						</div>
+					{/snippet}
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
 				  <DropdownMenu.Group>
