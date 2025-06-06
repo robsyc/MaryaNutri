@@ -77,6 +77,11 @@
     const co2_yTicks = [0, 3, 6, 9, 12, 15, 18];
 </script>
 
+<svelte:head>
+    <title>MaryaNutri - End Malnutrition, Save Lives</title>
+    <meta name="description" content="MaryaNutri© creates highly nutritious innovative insect-fortified foods to treat severe acute malnutrition in children." />
+</svelte:head>
+
 <!-- Hero page -->
 <div class="bg-cover bg-no-repeat bg-fixed lg:bg-center"
 style="background-image: url('/hero.jpg');"
@@ -105,13 +110,6 @@ style="background-image: url('/hero.jpg');"
         </div>
     </div>
 </section>
-
-
-<!-- <section class="py-20 bg-background">
-    <div class="container mx-auto md:px-4">
-      <h2 class="text-4xl font-semibold mb-16">
-        Insects are highly nutritious and sustainable food sources!
-      </h2> -->
 
 <!-- Children are dying -->
 <section class="min-h-screen flex items-center justify-center bg-background">

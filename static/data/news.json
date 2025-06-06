@@ -1,0 +1,26 @@
+[
+    {
+      "id": "brussels-times-feature",
+      "title": "MaryaNutri Featured in Brussels Times",
+      "excerpt": "From starvation to solution: Kenyan PhD student in Belgium fights to end global malnutrition with insect-fortified foods",
+      "content": "MaryaNutri was recently featured in a comprehensive article by Brussels Times, highlighting our mission to combat global malnutrition through innovative insect-fortified food solutions. The article explores our founder's journey from Kenya to Belgium and the development of sustainable nutrition solutions.",
+      "image": "/maryam_DO.jpeg",
+      "date": "2024-11-15",
+      "category": "Media Coverage",
+      "author": "The Brussels Times",
+      "tags": ["media", "recognition", "malnutrition", "innovation"],
+      "externalLink": "https://www.brusselstimes.com/1313990/from-starvation-to-solution-kenyan-phd-student-in-belgium-fights-to-end-global-malnutrition-with-insect-fortified-foods"
+    },
+    {
+      "id": "de-tijd-feature",
+      "title": "Maryam Featured in De Tijd",
+      "excerpt": "Zelf overleefde ze ooit op termieten, nu bestrijdt ze honger met insectenpap",
+      "content": "Maryam was recently featured in an article by De Tijd, highlighting her journey from Kenya to Belgium, her personal experience with malnutrition and the development of sustainable nutrition solutions. The article is published in the highly influential Dutch newspaper De Tijd.",
+      "image": "/maryam_detijd.jpeg",
+      "date": "2025-05-16",
+      "category": "Media Coverage",
+      "author": "Emma Verplancke, De Tijd",
+      "tags": ["media", "malnutrition", "innovation", "maryam"],
+      "externalLink": "https://www.tijd.be/ondernemen/management-ondernemerschap/zelf-overleefde-ze-ooit-op-termieten-nu-bestrijdt-ze-honger-met-insectenpap/10607186.html"
+    }
+]

@@ -4,6 +4,11 @@
     import { Baby, Salad, Utensils, Users, Sprout, BookOpenCheck } from 'lucide-svelte';
 </script>
 
+<svelte:head>
+    <title>About MaryaNutri</title>
+    <meta name="description" content="About MaryaNutri, our mission to end global malnutrition." />
+</svelte:head>
+
 <div class="container mb-12">
     <h1 class="text-4xl md:text-5xl font-bold pt-14 md:pt-10">About MaryaNutri</h1>
 

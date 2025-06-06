@@ -1,0 +1,46 @@
+[
+  {
+    "id": "mealworm-porridge",
+    "title": "Mealworm-fortified porridge",
+    "description": "High-quality powder for making nutritious porridge. Fortified with mealworm extract to increase nutritional value. Simply add water and mix!",
+    "image": "/products/xtra_boogie_porr.jpg",
+    "category": "Porridge",
+    "nutritionalBenefits": [
+      "High protein content from mealworm extract",
+      "Essential amino acids",
+      "Rich in vitamins and minerals",
+      "Easy to prepare"
+    ],
+    "ingredients": [
+      "Organic grain flour",
+      "Mealworm protein extract",
+      "Vitamins and minerals",
+      "Natural flavoring"
+    ],
+    "usage": "Mix 2-3 tablespoons with warm water. Stir well and let sit for 2 minutes before serving.",
+    "targetAge": "6 months and above",
+    "availability": "Contact us for pricing and availability"
+  },
+  {
+    "id": "cricket-porridge",
+    "title": "Cricket-fortified porridge",
+    "description": "We also have a cricket-fortified porridge powder. We aim to price our products affordable to reach as many children as possible.",
+    "image": "/products/porridge.jpg",
+    "category": "Porridge",
+    "nutritionalBenefits": [
+      "Complete protein from cricket flour",
+      "High in B12 and iron",
+      "Sustainable protein source",
+      "Affordable nutrition"
+    ],
+    "ingredients": [
+      "Organic grain flour",
+      "Cricket protein flour",
+      "Essential vitamins",
+      "Mineral supplements"
+    ],
+    "usage": "Mix 2-3 tablespoons with warm water. Stir well and serve warm.",
+    "targetAge": "6 months and above",
+    "availability": "Contact us for bulk orders"
+  }
+] 

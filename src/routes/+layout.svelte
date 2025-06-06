@@ -2,7 +2,7 @@
 	import { page } from "$app/stores";
 	import '../app.css';
 	import { ModeWatcher, toggleMode, mode, resetMode, setMode } from "mode-watcher";
-	import { CircleX, Menu, Sun, Moon, Languages, MonitorSmartphone } from 'lucide-svelte';
+	import { CircleX, Menu, Sun, Moon, Languages, MonitorSmartphone, Mail } from 'lucide-svelte';
 
 	import { Button, buttonVariants } from "$lib/components/ui/button";
 	import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle, SheetDescription } from "$lib/components/ui/sheet";
@@ -21,6 +21,7 @@
 	const navItems = [
 		{ label: "Home", href: "/" },
 		{ label: "Products", href: "/products" },
+		{ label: "News & Events", href: "/news" },
 		{ label: "About Us", href: "/about" },
 	];
 
@@ -67,6 +68,7 @@
 					-->
 					{#snippet child({ props })}
 						<div {...props} class={`${buttonVariants({ variant: "default", size: "default" })}`}>
+							<Mail class="h-4 w-4 mr-1" />
 							Contact Us
 						</div>
 					{/snippet}
@@ -249,6 +251,7 @@
 								<DropdownMenu.Item><span class=mr-1>🇳🇱</span> Dutch</DropdownMenu.Item>
 							</DropdownMenu.Content>
 						</DropdownMenu.Root>
+					</div>
 				</SheetContent>
 			</Sheet>
 		</div>

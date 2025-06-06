@@ -31,3 +31,5 @@ You can preview the production build with `npm run preview`.
 - [ ] Add section on food aid organizations (& their investments)
 - [ ] Functional contact form
 - [ ] Functional language switch
+- [ ] Extra list section "News and events"
+- [ ] Details sections for "Products" and "News and events"
