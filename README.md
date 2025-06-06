@@ -33,4 +33,5 @@ You can preview the production build with `npm run preview`.
 - [ ] Functional language switch
 - [x] Extra list section "News and events"
 - [x] Details sections for "Products" and "News and events"
+- [ ] Use [mdsvex](https://mdsvex.pngwn.io/) for markdown files of "News and events" articles
 - [ ] Update contents & add images

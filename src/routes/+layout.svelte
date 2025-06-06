@@ -281,9 +281,10 @@
 	  <div>
 		<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
 		<ul class="space-y-2">
-		  <li><a href="/" class="hover:text-white">Home</a></li>
-		  <li><a href="/products" class="hover:text-white">Products</a></li>
-		  <li><a href="/about" class="hover:text-white">About</a></li>
+		  <li><a href="/" class="duration-300 hover:text-primary">Home</a></li>
+		  <li><a href="/products" class="duration-300 hover:text-primary">Products</a></li>
+		  <li><a href="/news" class="duration-300 hover:text-primary">News & Events</a></li>
+		  <li><a href="/about" class="duration-300 hover:text-primary">About</a></li>
 		</ul>
 	  </div>
 	  
@@ -319,6 +320,6 @@
 	  &copy; {new Date().getFullYear()} MaryaNutri. All rights reserved.
 	</div>
 	<div class="text-center mt-8 text-sm">
-	  Made with ❤️ by <a class="font-mono duration-300 hover:text-destructive" href="https://github.com/robsyc">robsyc</a>
+	  Made with ❤️ by <a class="font-mono duration-300 hover:text-destructive" href="https://github.com/robsyc" target="_blank" rel="noopener noreferrer">robsyc</a>
 	</div>
 </footer>

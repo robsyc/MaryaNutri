@@ -16,11 +16,23 @@
       "title": "Maryam Featured in De Tijd",
       "excerpt": "Zelf overleefde ze ooit op termieten, nu bestrijdt ze honger met insectenpap",
       "content": "Maryam was recently featured in an article by De Tijd, highlighting her journey from Kenya to Belgium, her personal experience with malnutrition and the development of sustainable nutrition solutions. The article is published in the highly influential Dutch newspaper De Tijd.",
-      "image": "/maryam_detijd.jpeg",
+      "image": "/news/maryam_detijd.jpeg",
       "date": "2025-05-16",
       "category": "Media Coverage",
       "author": "Emma Verplancke, De Tijd",
       "tags": ["media", "malnutrition", "innovation", "maryam"],
       "externalLink": "https://www.tijd.be/ondernemen/management-ondernemerschap/zelf-overleefde-ze-ooit-op-termieten-nu-bestrijdt-ze-honger-met-insectenpap/10607186.html"
+    },
+    {
+      "id": "maryanutri-launch",
+      "title": "MaryaNutri Launch Event",
+      "excerpt": "We're organizing a launch event for MaryaNutri @ the Wintercircus in Ghent",
+      "content": "We're organizing a open-for-everyone launch event for MaryaNutri @ the Wintercircus in Ghent. We'll be there on June 21st, 2025, from 17:30 to 20:00 in the evening. Come and meet us, learn about our mission, and taste our products!",
+      "image": "/news/wintercircus.jpg",
+      "date": "2025-06-06",
+      "category": "Events",
+      "author": "Team MaryaNutri",
+      "tags": ["events", "maryanutri", "ghent", "wintercircus"],
+      "externalLink": null
     }
 ]
