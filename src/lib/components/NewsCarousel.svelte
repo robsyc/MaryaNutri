@@ -59,8 +59,8 @@
                         </Carousel.Item>
                     {/each}
                 </Carousel.Content>
-                <Carousel.Previous class="left-3 lg:-left-12 top-[37%] lg:top-1/2" />
-                <Carousel.Next class="right-3 lg:-right-12 top-[37%] lg:top-1/2" />
+                <Carousel.Previous class="left-3 lg:-left-12 top-[35%] md:top-[37%] lg:top-1/2" />
+                <Carousel.Next class="right-3 lg:-right-12 top-[35%] md:top-[37%] lg:top-1/2" />
             </Carousel.Root>
 
             <div class="text-center mt-6">
