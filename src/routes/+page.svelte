@@ -56,15 +56,109 @@
 
 </script>
 
+<style>
+    /* Default background for large screens - center and cover */
+    .hero-background {
+        background-image: url('/hero.jpg');
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /* Medium screens and below - align left */
+    @media only screen and (max-width: 1023px) {
+        .hero-background {
+            background-position: left center;
+        }
+    }
+
+    /* Small screens - align left */
+    @media only screen and (max-width: 767px) {
+        .hero-background {
+            background-position: left center;
+        }
+    }
+
+    /* iOS Safari specific detection and fix - only target iOS devices */
+    @supports (-webkit-touch-callout: none) and (not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)))) {
+        @media only screen and (max-width: 767px) {
+            .hero-background {
+                background-attachment: scroll;
+                background-size: auto;
+                background-position: left top;
+            }
+        }
+    }
+
+    /* More specific iOS detection using device characteristics */
+    @media only screen 
+        and (max-width: 767px) 
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: portrait)
+        and (-webkit-touch-callout: none) {
+        .hero-background {
+            background-attachment: scroll;
+            background-size: auto;
+            background-position: left top;
+        }
+    }
+
+    /* iOS landscape mode */
+    @media only screen 
+        and (max-width: 1024px) 
+        and (-webkit-min-device-pixel-ratio: 1)
+        and (orientation: landscape)
+        and (-webkit-touch-callout: none) {
+        .hero-background {
+            background-attachment: scroll;
+            background-size: auto;
+            background-position: left top;
+        }
+    }
+
+    /* High DPI iOS devices (iPhone 6+ and newer) */
+    @media only screen 
+        and (max-width: 767px) 
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (-webkit-touch-callout: none) {
+        .hero-background {
+            background-attachment: scroll !important;
+            background-size: auto !important;
+            background-position: left top !important;
+        }
+    }
+
+    /* Ensure Android devices maintain fixed background functionality */
+    /* This overrides any iOS fixes for Android Chrome */
+    @media only screen and (max-width: 767px) {
+        .hero-background {
+            /* Android Chrome supports background-attachment: fixed properly */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: left center;
+        }
+    }
+
+    /* Re-apply iOS fixes after Android reset - iOS has higher specificity */
+    @supports (-webkit-touch-callout: none) {
+        @media only screen and (max-width: 767px) {
+            .hero-background {
+                background-attachment: scroll !important;
+                background-size: auto !important;
+                background-position: left top !important;
+            }
+        }
+    }
+</style>
+
 <svelte:head>
     <title>MaryaNutri - End Malnutrition, Save Lives</title>
     <meta name="description" content="MaryaNutri© creates highly nutritious innovative insect-fortified foods to treat severe acute malnutrition in children." />
 </svelte:head>
 
 <!-- Background image -->
-<div class="bg-cover bg-no-repeat bg-fixed lg:bg-center"
-style="background-image: url('/hero.jpg');"
->
+<div class="hero-background">
 
 <!-- Hero section -->
 <section class="min-h-screen bg-scroll py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
