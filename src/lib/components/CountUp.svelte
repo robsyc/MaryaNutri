@@ -1,24 +1,24 @@
 <!-- CountUp.svelte -->
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
-    import { tweened } from 'svelte/motion';
+    import { Tween } from 'svelte/motion';
     import { cubicOut } from 'svelte/easing';
-    import { fade } from 'svelte/transition';
+    // import { fade } from 'svelte/transition';
   
-    export let target = 0;        // The target number to count up to
-    export let duration = 1000;   // Duration of the counting animation
-    export let start = 0;         // Starting number
-    export let decimals = 0;      // Number of decimal places
-    export let suffix = '';       // Suffix to append (e.g., '%')
+    export let target: number = 0;        // The target number to count up to
+    export let duration: number = 1000;   // Duration of the counting animation
+    export let start: number = 0;         // Starting number
+    export let decimals: number = 0;      // Number of decimal places
+    export let suffix: string = '';       // Suffix to append (e.g., '%')
   
-    let count = tweened(start, { duration: 0 });
-    let visible = false;
-    let numberElement;
+    let count = new Tween(start, { duration: 0 });
+    let visible: boolean = false;
+    let numberElement: HTMLElement;
   
-    $: displayValue = $count.toFixed(decimals) + suffix;
+    $: displayValue = count.current.toFixed(decimals) + suffix;
   
-    function handleIntersection(entries) {
-      entries.forEach(entry => {
+    function handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting && !visible) {
           visible = true;
           count.set(target, { duration, easing: cubicOut });

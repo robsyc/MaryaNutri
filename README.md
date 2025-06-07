@@ -29,10 +29,11 @@ You can preview the production build with `npm run preview`.
 - [x] Fix Maryam pf picture
 - [x] Fix bar chart animations
 - [ ] Add section on food aid organizations (& their investments)
-- [ ] Functional contact form
+- [x] Functional contact form (EmailJS implementation ready - see EMAILJS_SETUP.md)
+- [ ] Sit with Maryam to set up EmailJS
 - [ ] Functional language switch
 - [x] Extra list section "News and events"
 - [x] Details sections for "Products" and "News and events"
 - [ ] Use [mdsvex](https://mdsvex.pngwn.io/) for markdown files of "News and events" articles
 - [x] Update contents & add images
-- [ ] Add news carousel to homescreen
+- [x] Add news carousel to homescreen

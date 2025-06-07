@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
+    import type { PageData } from './$types';
+    
     onMount(async () => {
         const { default: ScrollReveal } = await import('scrollreveal');
         ScrollReveal().reveal('.reveal-card', {
@@ -21,16 +23,18 @@
     import { Progress } from "$lib/components/ui/progress/index.js";
     import * as Popover from "$lib/components/ui/popover/index.js";
     import * as Avatar from "$lib/components/ui/avatar/index.js";
-    import BarChart from '$lib/components/BarChart.svelte';
-	import Separator from '$lib/components/ui/separator/separator.svelte';
+    import NewsCarousel from '$lib/components/NewsCarousel.svelte';
+    import SustainabilityFacts from '$lib/components/SustainabilityFacts.svelte';
+
+    let { data }: { data: PageData } = $props();
     
-    let count: number = 0;
-    let progress: number = 0;
+    let count: number = $state(0);
+    let progress: number = $state(0);
     let progressInterval: ReturnType<typeof setInterval>;
     let countInterval: ReturnType<typeof setInterval>;
 
-    $: child = count === 1 ? 'child' : 'children';
-    $: verb = count === 1 ? 'is' : 'are';
+    const child = $derived(count === 1 ? 'child' : 'children');
+    const verb = $derived(count === 1 ? 'is' : 'are');
 
     onMount(() => {
         // Update progress every 1 second
@@ -49,32 +53,7 @@
         clearInterval(countInterval);
     });
 
-    // Chart data
-    const chart_labels = ['Cow', 'Pig', 'Chicken', 'Cricket', 'Mealworm'];
-    const water_data = [
-      { value: 22000, color: '#ff4c4c' },
-      { value: 20000, color: '#ff7f00' },
-      { value: 16000, color: '#ffe700' },
-      { value: 10, color: '#8cff00' },
-      { value: 9, color: '#00ffff' },
-    ];
-    const water_yTicks = [0, 5000, 10000, 15000, 20000, 25000];
-    const land_data = [
-      { value: 200, color: '#ff4c4c' },
-      { value: 180, color: '#ff7f00' },
-      { value: 110, color: '#ffe700' },
-      { value: 15, color: '#8cff00' },
-      { value: 14, color: '#00ffff' },
-    ];
-    const land_yTicks = [0, 50, 100, 150, 200, 250];
-    const co2_data = [
-      { value: 14.8, color: '#ff4c4c' },
-      { value: 3.8, color: '#ff7f00' },
-      { value: 1.1, color: '#ffe700' },
-      { value: 0.15, color: '#8cff00' },
-      { value: 0.10, color: '#00ffff' },
-    ];
-    const co2_yTicks = [0, 3, 6, 9, 12, 15, 18];
+
 </script>
 
 <svelte:head>
@@ -82,10 +61,12 @@
     <meta name="description" content="MaryaNutri© creates highly nutritious innovative insect-fortified foods to treat severe acute malnutrition in children." />
 </svelte:head>
 
-<!-- Hero page -->
+<!-- Background image -->
 <div class="bg-cover bg-no-repeat bg-fixed lg:bg-center"
 style="background-image: url('/hero.jpg');"
 >
+
+<!-- Hero section -->
 <section class="min-h-screen bg-scroll py-10 overflow-hidden flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
     <div class="container mx-auto px-6 mt-4">
         <div class="flex flex-col items-center text-center md:max-w-xl mx-auto my-auto">
@@ -178,7 +159,7 @@ style="background-image: url('/hero.jpg');"
     </div>
 </section>
 
-
+<!-- Maryam card -->
 <section class="py-20 overflow-hidden bg-fixed flex items-center justify-center bg-background/50 lg:bg-gradient-to-r from-background/5 from-20% via-background to-background/5 to-80%">
     <div class="container-sm mx-auto md:px-4">
         <div class="my-16 lg:my-32 container mx-auto md:px-32 lg:px-64">
@@ -187,7 +168,6 @@ style="background-image: url('/hero.jpg');"
                     <div class="my-auto mx-auto md:ml-4 pt-6 md:py-8 md:px-6">
                         <Avatar.Root class="w-20 h-20 mx-auto">
                             <Avatar.Image src="/maryam_pf.jpeg" alt="Maryam Imbumi" />
-                            <Avatar.Fallback>CN</Avatar.Fallback>
                         </Avatar.Root>
                     </div>
                     <div>
@@ -213,60 +193,10 @@ style="background-image: url('/hero.jpg');"
     </div>
 </section>
 
+<!-- Sustainability Facts -->
+<SustainabilityFacts />
 
-<section class="py-20 bg-background">
-    <div class="container mx-auto md:px-4">
-      <h2 class="text-4xl font-semibold mb-16">
-        Insects are highly nutritious and sustainable food sources!
-      </h2>
-  
-      <!-- Water Consumption Chart -->
-      <div class="flex flex-col md:flex-row md:items-center mb-10">
-        <div class="md:w-1/2 md:pl-6 text-center p-3">
-            <h3 class="text-2xl font-semibold mb-4">Water Consumption</h3>
-            <p class="text-lg mx-8">
-                Insects require significantly less water than traditional livestock.
-                You can barely see the water consumption of crickets and mealworms on the chart!
-                It's that low!
-            </p>
-        </div>
-        <div class="md:w-1/2 py-4 mt-4 md:mt-8">
-            <BarChart data={water_data} labels={chart_labels} yTicks={water_yTicks} yLabel="Litres (L)" />
-        </div>
-      </div>
-
-      <Separator class="my-10" />
-  
-      <!-- Land Use Chart -->
-      <div class="flex flex-col md:flex-row md:items-center mb-10">
-        <div class="md:w-1/2 md:pl-6 text-center p-3">
-            <h3 class="text-2xl font-semibold mb-4">Land Use</h3>
-            <p class="text-lg mx-8">
-                Insect farming uses less land area compared to traditional farming.
-                While beef requires 200m² - crickets only need 15m²
-            </p>
-        </div>
-        <div class="md:w-1/2 py-4 mt-4 md:mt-8">
-            <BarChart data={land_data} labels={chart_labels} yTicks={land_yTicks} yLabel="Square Metres (m²)" />
-        </div>
-      </div>
-
-      <Separator class="my-10" />
-  
-      <!-- CO₂ Emissions Chart -->
-      <div class="flex flex-col md:flex-row md:items-center">
-        <div class="md:w-1/2 md:pl-6 text-center p-3">
-            <h3 class="text-2xl font-semibold mb-4">CO₂ Emissions</h3>
-            <p class="text-lg mx-8">
-                Insect protein production emits fewer greenhouse gases.
-                On average, insects emit 100 times less CO₂ than cattle.
-            </p>
-        </div>
-        <div class="md:w-1/2 py-4 mt-4 md:mt-8">
-            <BarChart data={co2_data} labels={chart_labels} yTicks={co2_yTicks} yLabel="CO₂ Emissions (kg) per 1kg of meat" />
-        </div>
-      </div>
-    </div>
-</section>
+<!-- News Carousel -->
+<NewsCarousel news={data.news} />
 
 </div>
