@@ -196,4 +196,51 @@
 <!-- News Carousel -->
 <NewsCarousel news={data.news} />
 
+<!-- Founder's Story Video -->
+<section class="py-20 bg-background">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Founder's Journey</h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Watch the inspiring story of Maryam Imbumi and her mission to end malnutrition, 
+                beautifully captured by the Wintercircus collective.
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="relative aspect-video rounded-lg overflow-hidden shadow-2xl bg-accent/10 reveal-card">
+                <iframe
+                    src="https://www.youtube.com/embed/j2mXKbDZHf0"
+                    title="Maryam Imbumi's Story - MaryaNutri Founder"
+                    class="absolute inset-0 w-full h-full"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-sm text-muted-foreground mb-4">
+                    Video by <a href="https://wintercircus.be/" target="_blank" rel="noopener noreferrer" class="underline hover:text-primary transition-colors">Wintercircus</a>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button href="/about" class="inline-flex items-center">
+                        Learn More About Our Mission
+                        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </Button>
+                    <Button href="/products" variant="secondary" class="inline-flex items-center">
+                        Explore Our Products
+                        <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 </div> <!-- End of hero-background -->

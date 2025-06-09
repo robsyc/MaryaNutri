@@ -31,7 +31,8 @@ You can preview the production build with `npm run preview`.
 - [ ] Add section on food aid organizations (& their investments)
 - [x] Functional contact form (EmailJS implementation ready - see EMAILJS_SETUP.md)
 - [ ] Sit with Maryam to set up EmailJS
-- [ ] Functional language switch
+- [x] Functional language switch
+  - [ ] Extend language switch to all pages & content (currently only works for nav/common items) Not yet sure how this should be implemented from products/news items...
 - [x] Extra list section "News and events"
 - [x] Details sections for "Products" and "News and events"
 - [ ] Use [mdsvex](https://mdsvex.pngwn.io/) for markdown files of "News and events" articles

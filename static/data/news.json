@@ -6,7 +6,7 @@
       "content": "MaryaNutri was recently featured in a comprehensive article by Brussels Times, highlighting our mission to combat global malnutrition through innovative insect-fortified food solutions. The article explores our founder's journey from Kenya to Belgium and the development of sustainable nutrition solutions.",
       "image": "/maryam_DO.jpeg",
       "date": "2024-11-15",
-      "category": "Media Coverage",
+      "category": "Article",
       "author": "The Brussels Times",
       "tags": ["media", "recognition", "malnutrition", "innovation"],
       "externalLink": "https://www.brusselstimes.com/1313990/from-starvation-to-solution-kenyan-phd-student-in-belgium-fights-to-end-global-malnutrition-with-insect-fortified-foods"
@@ -18,10 +18,22 @@
       "content": "MaryaNutri was recently featured in a comprehensive article by Nieuwsblad, highlighting our mission to combat global malnutrition through innovative insect-fortified food solutions. The article explores our founder's journey from Kenya to Belgium and the development of sustainable nutrition solutions.",
       "image": "/news/maryam_nieuwsblad.jpg",
       "date": "2025-01-24",
-      "category": "Media Coverage",
+      "category": "Article",
       "author": "Levi Verbauwhede, Nieuwsblad",
       "tags": ["media", "recognition", "malnutrition", "innovation"],
       "externalLink": "https://www.nieuwsblad.be/cnt/dmf20250124_95606819"
+    },
+    {
+      "id": "wintercircus-collective",
+      "title": "Wintercircus Collective # Maryam Imbumi",
+      "excerpt": "The Wintercircus Collective made a video about our founder Maryam Imbumi!",
+      "content": "Maryam Imbumi, a Kenyan PhD researcher at Ghent University's Faculty of Bioscience Engineering, is on a mission to combat malnutrition with insect-enriched food products — both highly nutritious and environmentally sustainable.\n\nMaryam is also the first recipient of a Wintercircus Collective Wild Card – a program supported by the Wintercircus Fund.",
+      "image": "/news/WC-collective-thumbnail.jpg",
+      "date": "2025-04-01",
+      "category": "Media",
+      "author": "Wintercircus",
+      "tags": ["media", "wintercircus", "innovation", "maryam"],
+      "externalLink": "https://www.youtube.com/watch?v=j2mXKbDZHf0"
     },
     {
       "id": "de-tijd-feature",
@@ -30,7 +42,7 @@
       "content": "Maryam was recently featured in an article by De Tijd, highlighting her journey from Kenya to Belgium, her personal experience with malnutrition and the development of sustainable nutrition solutions. The article is published in the highly influential Dutch newspaper De Tijd.",
       "image": "/news/maryam_detijd.jpeg",
       "date": "2025-05-16",
-      "category": "Media Coverage",
+      "category": "Article",
       "author": "Emma Verplancke, De Tijd",
       "tags": ["media", "malnutrition", "innovation", "maryam"],
       "externalLink": "https://www.tijd.be/ondernemen/management-ondernemerschap/zelf-overleefde-ze-ooit-op-termieten-nu-bestrijdt-ze-honger-met-insectenpap/10607186.html"
@@ -39,12 +51,12 @@
       "id": "maryanutri-launch",
       "title": "MaryaNutri Launch Event",
       "excerpt": "We're organizing a launch event for MaryaNutri @ the Wintercircus in Ghent",
-      "content": "We're organizing an open-for-everyone launch event for MaryaNutri in the beautiful Wintercircus tech start-up campus in Ghent. We'll be there on June 24th, 2025, from 4-8pm. Come and meet us, learn about our mission, and taste our products!\n\nBe among the first 300 to register and get a free drink! You can RSVP through this form: \nhttps://forms.gle/MMCXeBCXb1254Fpx5",
+      "content": "We're organizing an open-for-everyone launch event for MaryaNutri in the beautiful Wintercircus tech start-up campus in Ghent. We'll be there on June 24th, 2025, from 4-8pm. Come and meet us, learn about our mission, and taste our products!\n\nBe among the first 300 to register and get a free drink! You can RSVP through the form below.",
       "image": "/news/wintercircus.jpg",
       "date": "2025-06-06",
-      "category": "Events",
+      "category": "Event",
       "author": "Team MaryaNutri",
       "tags": ["events", "maryanutri", "ghent", "wintercircus"],
-      "externalLink": null
+      "externalLink": "https://forms.gle/bbCVEsG4f319weMT9"
     }
 ]

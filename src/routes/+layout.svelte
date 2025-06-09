@@ -15,17 +15,55 @@
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	import Card from "$lib/components/ui/card/card.svelte";
 
+	// Import i18n
+	import { t, locale, locales, loadTranslations } from '$lib/i18n';
+	import { getStoredLocale, setStoredLocale, detectBrowserLocale } from '$lib/i18n/utils';
+
 	let { children } = $props();
 
-	let lang = $state("en");
 	let showNotification = $state(true);
+	let currentLocale = $state('en');
+	let isInitialized = $state(false);
 
-	const navItems = [
-		{ label: "Home", shortLabel: "Home", href: "/" },
-		{ label: "Products", shortLabel: "Products", href: "/products" },
-		{ label: "News & Events", shortLabel: "News", href: "/news" },
-		{ label: "About Us", shortLabel: "About", href: "/about" },
-	];
+	// Language switching function
+	const switchLanguage = async (newLocale: string) => {
+		console.log('Switching language to:', newLocale);
+		
+		await loadTranslations(newLocale, $page.url.pathname);
+		locale.set(newLocale);
+		setStoredLocale(newLocale);
+	};
+
+	// Initialize locale on mount (only once)
+	$effect(() => {
+		if (browser && !isInitialized) {
+			const storedLocale = getStoredLocale();
+			
+			console.log('Initializing locale. Stored:', storedLocale, 'Current:', $locale);
+			
+			if (storedLocale && storedLocale !== $locale) {
+				console.log('Setting stored locale to:', storedLocale);
+				switchLanguage(storedLocale);
+			} else {
+				currentLocale = $locale;
+			}
+			
+			isInitialized = true;
+		}
+	});
+
+	// Sync currentLocale with the actual locale store
+	$effect(() => {
+		currentLocale = $locale;
+	});
+
+	// Navigation items with translations
+	const navItems = $derived([
+		{ label: $t('nav.home'), shortLabel: $t('nav.home'), href: "/" },
+		{ label: $t('nav.products'), shortLabel: $t('nav.products'), href: "/products" },
+		{ label: $t('nav.newsEvents'), shortLabel: $t('nav.news'), href: "/news" },
+		{ label: $t('nav.aboutUs'), shortLabel: $t('nav.about'), href: "/about" },
+	]);
 
 	let name = $state('');
 	let email = $state('');
@@ -117,9 +155,9 @@
 	{#if showNotification}
 	<div class="bg-primary/90">
 		<div class="md:container md:mx-auto p-2 flex h-auto items-center justify-between text-primary-foreground">
-			<p>MaryaNutri is organizing a launch event 24th of June @ Wintercircus Ghent!
-				<a href="https://forms.gle/MMCXeBCXb1254Fpx5" 
-				class="underline hover:text-accent-foreground/60 duration-300" target="_blank" rel="noopener noreferrer">RSVP here</a>
+			<p>{$t('nav.launchEvent')}
+				<a href="https://forms.gle/bbCVEsG4f319weMT9" 
+				class="underline hover:text-accent-foreground/60 duration-300" target="_blank" rel="noopener noreferrer">{$t('nav.rsvpHere')}</a>
 			</p>
 			<button onclick={() => showNotification = false}>
 				<CircleX class="h-5 w-5 ml-3 hover:text-accent-foreground/60 duration-300" />
@@ -146,43 +184,43 @@
 					{#snippet child({ props })}
 						<div {...props} class={`${buttonVariants({ variant: "default", size: "default" })} text-sm md:text-base px-3 md:px-4`}>
 							<Mail class="h-4 w-4 mr-1" />
-							<span class="hidden md:inline">Contact Us</span>
-							<span class="md:hidden">Contact</span>
+							<span class="hidden md:inline">{$t('common.contactUs')}</span>
+							<span class="md:hidden">{$t('common.contact')}</span>
 						</div>
 					{/snippet}
 				</Dialog.Trigger>
 				<Dialog.Content>
 					<Dialog.Header>
-					  <Dialog.Title>Contact Us</Dialog.Title>
+					  <Dialog.Title>{$t('common.contactUs')}</Dialog.Title>
 					  <Dialog.Description>
-						Fill out the form below to get in touch with us.
+						{$t('common.fillForm')}
 					  </Dialog.Description>
 					</Dialog.Header>
 					<form class="space-y-4" onsubmit={handleSubmit}>
-						<Input bind:value={name} placeholder="Your Name" required disabled={isSubmitting} />
-						<Input type="email" bind:value={email} placeholder="Your Email" required disabled={isSubmitting} />
-						<Textarea bind:value={message} placeholder="Type your message here" required disabled={isSubmitting} />
+						<Input bind:value={name} placeholder={$t('common.yourName')} required disabled={isSubmitting} />
+						<Input type="email" bind:value={email} placeholder={$t('common.yourEmail')} required disabled={isSubmitting} />
+						<Textarea bind:value={message} placeholder={$t('common.typeMessage')} required disabled={isSubmitting} />
 						
 						{#if submitStatus === 'success'}
 							<div class="p-3 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-md">
-								✅ Message sent successfully! We'll get back to you soon.
+								{$t('common.messageSentSuccess')}
 							</div>
 						{:else if submitStatus === 'error'}
 							<div class="p-3 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-md">
-								❌ Failed to send message. 
+								{$t('common.messageSentError')}
 								{#if EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID'}
-									EmailJS not configured yet. Please contact us at contact@maryanutri.com
+									{$t('common.emailNotConfigured')}
 								{:else}
-									Please try again or contact us at contact@maryanutri.com
+									{$t('common.tryAgain')}
 								{/if}
 							</div>
 						{/if}
 						
 						<Button disabled={isSubmitting || !name || !email || !message} type="submit">
 							{#if isSubmitting}
-								Sending...
+								{$t('common.sending')}
 							{:else}
-								Send Message
+								{$t('common.sendMessage')}
 							{/if}
 						</Button>
 					</form>
@@ -241,27 +279,24 @@
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
 					<DropdownMenu.Group>
-						<DropdownMenu.GroupHeading>Theme</DropdownMenu.GroupHeading>
+						<DropdownMenu.GroupHeading>{$t('common.theme')}</DropdownMenu.GroupHeading>
 						<DropdownMenu.Separator/>
 						<DropdownMenu.Item onclick={() => setMode("light")}>
 							<Sun class="h-6 w-6 mr-2" />
-							Light</DropdownMenu.Item>
+							{$t('common.light')}</DropdownMenu.Item>
 						<DropdownMenu.Item onclick={() => setMode("dark")}>
 							<Moon class="h-6 w-6 mr-2" />
-							Dark</DropdownMenu.Item>
+							{$t('common.dark')}</DropdownMenu.Item>
 						<DropdownMenu.Item onclick={() => resetMode()}>
 							<MonitorSmartphone class="h-6 w-6 mr-2" />
-							System</DropdownMenu.Item>
+							{$t('common.system')}</DropdownMenu.Item>
 					</DropdownMenu.Group>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 
-			<!-- Language buttom -->
+			<!-- Language button -->
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
-					<!-- <Button variant="outline" size="icon">
-						<Languages class="h-6 w-6" />
-					</Button> FIX warning!!! -->
 					{#snippet child({ props })}
 						<div {...props} class={buttonVariants({ variant: "outline", size: "icon" })}>
 							<Languages class="h-6 w-6" />
@@ -270,11 +305,20 @@
 				</DropdownMenu.Trigger>
 				<DropdownMenu.Content>
 				  <DropdownMenu.Group>
-					<DropdownMenu.GroupHeading>Language</DropdownMenu.GroupHeading>
+					<DropdownMenu.GroupHeading>{$t('common.language')}</DropdownMenu.GroupHeading>
 					<DropdownMenu.Separator />
-					<DropdownMenu.Item><span class=mr-1>🇬🇧</span> English</DropdownMenu.Item>
-					<DropdownMenu.Item><span class=mr-1>🇫🇷</span> French</DropdownMenu.Item>
-					<DropdownMenu.Item><span class=mr-1>🇳🇱</span> Dutch</DropdownMenu.Item>
+					<DropdownMenu.Item onclick={() => switchLanguage('nl')} class={currentLocale === 'nl' ? 'bg-accent' : ''}>
+						<span class="mr-1">🇳🇱</span> Dutch
+					</DropdownMenu.Item>
+					<DropdownMenu.Item onclick={() => switchLanguage('en')} class={currentLocale === 'en' ? 'bg-accent' : ''}>
+						<span class="mr-1">🇬🇧</span> English
+					</DropdownMenu.Item>
+					<DropdownMenu.Item onclick={() => switchLanguage('fr')} class={currentLocale === 'fr' ? 'bg-accent' : ''}>
+						<span class="mr-1">🇫🇷</span> French
+					</DropdownMenu.Item>
+					<DropdownMenu.Item onclick={() => switchLanguage('sw')} class={currentLocale === 'sw' ? 'bg-accent' : ''}>
+						<span class="mr-1">🇰🇪</span> Swahili
+					</DropdownMenu.Item>
 				  </DropdownMenu.Group>
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
@@ -292,7 +336,7 @@
 							alt="MaryaNutri" class="h-16 w-auto py-2" />
 						</a>
 						<SheetHeader>
-							<SheetTitle>Follow us!</SheetTitle>
+							<SheetTitle>{$t('common.followUs')}</SheetTitle>
 							<SheetDescription class="flex items-center justify-center space-x-4">
 								<a href="https://www.facebook.com/maryanutri" class="duration-300 hover:text-primary" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
 									<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" x="0px" y="0px" width="2rem" height="2rem" viewBox="0 0 24 24">
@@ -325,18 +369,18 @@
 									<Sun class="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"/>
 									<Moon class="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"/>
 								</Button>
-								<span class="text-accent-foreground font-normal ml-3 my-auto">Switch theme</span>
+								<span class="text-accent-foreground font-normal ml-3 my-auto">{$t('common.switchTheme')}</span>
 							</DropdownMenu.Trigger>
 							<DropdownMenu.Content>
 								<DropdownMenu.Item onclick={() => setMode("light")}>
 									<Sun class="h-6 w-6 mr-2" />
-									Light</DropdownMenu.Item>
+									{$t('common.light')}</DropdownMenu.Item>
 								<DropdownMenu.Item onclick={() => setMode("dark")}>
 									<Moon class="h-6 w-6 mr-2" />
-									Dark</DropdownMenu.Item>
+									{$t('common.dark')}</DropdownMenu.Item>
 								<DropdownMenu.Item onclick={() => resetMode()}>
 									<MonitorSmartphone class="h-6 w-6 mr-2" />
-									System</DropdownMenu.Item>
+									{$t('common.system')}</DropdownMenu.Item>
 							</DropdownMenu.Content>
 						</DropdownMenu.Root>
 						<DropdownMenu.Root>
@@ -344,12 +388,21 @@
 								<Button variant="outline" size="icon" class="mr-1">
 									<Languages class="h-6 w-6" />
 								</Button>
-								<span class="text-accent-foreground font-normal ml-3 my-auto">Switch language</span>
+								<span class="text-accent-foreground font-normal ml-3 my-auto">{$t('common.switchLanguage')}</span>
 							</DropdownMenu.Trigger>
 							<DropdownMenu.Content>
-								<DropdownMenu.Item><span class=mr-1>🇬🇧</span> English</DropdownMenu.Item>
-								<DropdownMenu.Item><span class=mr-1>🇫🇷</span> French</DropdownMenu.Item>
-								<DropdownMenu.Item><span class=mr-1>🇳🇱</span> Dutch</DropdownMenu.Item>
+								<DropdownMenu.Item onclick={() => switchLanguage('en')} class={currentLocale === 'en' ? 'bg-accent' : ''}>
+									<span class="mr-1">🇬🇧</span> English
+								</DropdownMenu.Item>
+								<DropdownMenu.Item onclick={() => switchLanguage('fr')} class={currentLocale === 'fr' ? 'bg-accent' : ''}>
+									<span class="mr-1">🇫🇷</span> French
+								</DropdownMenu.Item>
+								<DropdownMenu.Item onclick={() => switchLanguage('nl')} class={currentLocale === 'nl' ? 'bg-accent' : ''}>
+									<span class="mr-1">🇳🇱</span> Dutch
+								</DropdownMenu.Item>
+								<DropdownMenu.Item onclick={() => switchLanguage('sw')} class={currentLocale === 'sw' ? 'bg-accent' : ''}>
+									<span class="mr-1">🇰🇪</span> Swahili
+								</DropdownMenu.Item>
 							</DropdownMenu.Content>
 						</DropdownMenu.Root>
 					</div>
@@ -372,33 +425,33 @@
 	  
 	  <!-- About Section -->
 	  <div>
-		<h3 class="text-xl font-semibold mb-4">About Us</h3>
+		<h3 class="text-xl font-semibold mb-4">{$t('nav.aboutUs')}</h3>
 		<p class="">
-			Join us in our mission to end global malnutrition!
+			{$t('nav.aboutUsDescription')}
 		</p>
 	  </div>
 	  
 	  <!-- Links Section -->
 	  <div>
-		<h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+		<h3 class="text-xl font-semibold mb-4">{$t('nav.quickLinks')}</h3>
 		<ul class="space-y-2">
-		  <li><a href="/" class="duration-300 hover:text-primary">Home</a></li>
-		  <li><a href="/products" class="duration-300 hover:text-primary">Products</a></li>
-		  <li><a href="/news" class="duration-300 hover:text-primary">News & Events</a></li>
-		  <li><a href="/about" class="duration-300 hover:text-primary">About Us</a></li>
+		  <li><a href="/" class="duration-300 hover:text-primary">{$t('nav.home')}</a></li>
+		  <li><a href="/products" class="duration-300 hover:text-primary">{$t('nav.products')}</a></li>
+		  <li><a href="/news" class="duration-300 hover:text-primary">{$t('nav.newsEvents')}</a></li>
+		  <li><a href="/about" class="duration-300 hover:text-primary">{$t('nav.aboutUs')}</a></li>
 		</ul>
 	  </div>
 	  
 	  <!-- Contact Section -->
 	  <div>
-		<h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-		<p class="">contact@maryanutri.com</p>
-		<p class="">Ghent, Belgium</p>
+		<h3 class="text-xl font-semibold mb-4">{$t('common.contactUs')}</h3>
+		<p class="">{$t('nav.contactInfo')}</p>
+		<p class="">{$t('nav.location')}</p>
 	  </div>
 	  
 	  <!-- Social Media Section -->
 	  <div>
-		<h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+		<h3 class="text-xl font-semibold mb-4">{$t('common.followUs')}</h3>
 		<div class="flex space-x-4">
 			<a href="https://www.facebook.com/maryanutri" class="duration-300 hover:text-primary" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" x="0px" y="0px" width="2rem" height="2rem" viewBox="0 0 24 24">
@@ -418,9 +471,9 @@
 		<Separator/>
 	</div>
 	<div class="text-center">
-	  &copy; {new Date().getFullYear()} MaryaNutri. All rights reserved.
+	  &copy; {new Date().getFullYear()} MaryaNutri. {$t('common.allRightsReserved')}
 	</div>
 	<div class="text-center mt-8 text-sm">
-	  Made with ❤️ by <a class="font-mono duration-300 hover:text-destructive" href="https://github.com/robsyc" target="_blank" rel="noopener noreferrer">robsyc</a>
+	  {$t('common.madeWith')} <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">❤️</a> {$t('common.by')} <a class="font-mono duration-300 hover:text-destructive" href="https://github.com/robsyc" target="_blank" rel="noopener noreferrer">robsyc</a>
 	</div>
 </footer>

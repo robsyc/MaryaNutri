@@ -85,14 +85,43 @@
         <!-- External Link -->
         {#if article.externalLink}
             <div class="bg-primary/5 border border-primary/20 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-2">Read the full article</h3>
-                <p class="text-muted-foreground mb-4">This article was originally published externally. Click below to read the complete story.</p>
-                <a href={article.externalLink} target="_blank" rel="noopener noreferrer">
-                    <Button class="inline-flex items-center">
-                        <ExternalLink class="h-4 w-4 mr-1" />
-                        Read Full Article
-                    </Button>
-                </a>
+                {#if article.category === 'Article'}
+                    <h3 class="text-lg font-semibold mb-2">Read the full article</h3>
+                    <p class="text-muted-foreground mb-4">This article was originally published externally. Click below to read the complete story.</p>
+                    <a href={article.externalLink} target="_blank" rel="noopener noreferrer">
+                        <Button class="inline-flex items-center">
+                            <ExternalLink class="h-4 w-4 mr-1" />
+                            Read Full Article
+                        </Button>
+                    </a>
+                {:else if article.category === 'Media'}
+                    <h3 class="text-lg font-semibold mb-2">Watch the video</h3>
+                    <p class="text-muted-foreground mb-4">This video was originally published externally. Click below to watch the complete video.</p>
+                    <a href={article.externalLink} target="_blank" rel="noopener noreferrer">
+                        <Button class="inline-flex items-center">
+                            <ExternalLink class="h-4 w-4 mr-1" />
+                            Watch Video
+                        </Button>
+                    </a>
+                {:else if article.category === 'Event'}
+                    <h3 class="text-lg font-semibold mb-2">Join the event</h3>
+                    <p class="text-muted-foreground mb-4">Register or get more information about this event.</p>
+                    <a href={article.externalLink} target="_blank" rel="noopener noreferrer">
+                        <Button class="inline-flex items-center">
+                            <ExternalLink class="h-4 w-4 mr-1" />
+                            Register Now
+                        </Button>
+                    </a>
+                {:else}
+                    <h3 class="text-lg font-semibold mb-2">Learn more</h3>
+                    <p class="text-muted-foreground mb-4">Visit the external link for more information.</p>
+                    <a href={article.externalLink} target="_blank" rel="noopener noreferrer">
+                        <Button class="inline-flex items-center">
+                            <ExternalLink class="h-4 w-4 mr-1" />
+                            Learn More
+                        </Button>
+                    </a>
+                {/if}
             </div>
         {/if}
     </article>
