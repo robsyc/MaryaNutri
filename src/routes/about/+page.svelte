@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as Popover from "$lib/components/ui/popover/index.js";
-    import Button from '$lib/components/ui/button/button.svelte';
+    import { Button, buttonVariants } from "$lib/components/ui/button";
     import { Baby, Salad, Utensils, Users, Sprout, BookOpenCheck } from 'lucide-svelte';
 </script>
 
@@ -22,25 +22,33 @@
                 I know this cause personally - I was born in Kenya and almost died twice as a child due to severe malnutrition...
             </p>
             <p class="my-5 md:mt-4">
-                At MaryaNutri, we're creating unique, innovative insect-fortified foods that are nutritious and sustainable. Our goal is not just temporary relief, but lasting change to end poverty and hunger around the world. With roots in Kenya and our eyes on the global stage, we're working to make a real difference.
+                At MaryaNutri, we're creating unique, innovative insect-fortified foods 
+                that are nutritious and sustainable. Our goal is not just temporary relief, 
+                but lasting change to end poverty and hunger around the world. 
+                With roots in Kenya and our eyes on the global stage, 
+                we're working to make a real difference.
             </p>
         </div>
     </div>
 
-    <div>
-        <h2 class="text-4xl font-bold mt-10">Our Approach and Commitments</h2>
-        <p class="my-5">
-            We believe in turning research into real-world impact. 
-            That's why MaryaNutri isn't just about innovative food products; 
-            it's about bridging the gap between academic findings and practical solutions. 
-        </p>
+    <div class="my-16">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Approach and Commitments</h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                We believe in turning research into real-world impact. 
+                That's why MaryaNutri isn't just about innovative food products; 
+                it's about bridging the gap between academic findings and practical solutions. 
+            </p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <Baby />
                         Child-safety
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -50,9 +58,11 @@
             </Popover.Root>
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <Salad /> Highly Nutritious
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -63,10 +73,12 @@
             </Popover.Root>
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <Utensils />
                         Food-safety
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -76,10 +88,12 @@
             </Popover.Root>
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <Users />
                         Culturally informed partnerships
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -90,10 +104,12 @@
             </Popover.Root>
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <Sprout />
                         Sustainability
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -104,10 +120,12 @@
             </Popover.Root>
             <Popover.Root>
                 <Popover.Trigger>
-                    <Button class="h-16" variant="outline" size="lg">
+                    {#snippet child({ props })}
+                    <div {...props} class={`h-16 w-fit mx-auto ${buttonVariants({ variant: "outline", size: "lg" })}`}>
                         <BookOpenCheck />
                         Accessible & Transparent
-                    </Button>
+                    </div>
+                    {/snippet}
                 </Popover.Trigger>
                 <Popover.Content class="w-80">
                     <p class="text-muted-foreground text-sm">
@@ -119,7 +137,7 @@
         </div>
     </div>
 
-    <p>
+    <p class="text-lg text-muted-foreground max-w-2xl md:max-w-4xl mx-auto text-center">
         Driving sustainable change to end structural poverty and hunger 
         is a core objective embedded in our company's structure, 
         ensuring that social impact remains integral to our business model. 
