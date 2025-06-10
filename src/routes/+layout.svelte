@@ -89,9 +89,11 @@
 
 	// EmailJS configuration - Replace these with your actual values
 	// You can also use environment variables by importing from '$env/static/public'
-	const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-	const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-	const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+	import { PUBLIC_EMAILJS_SERVICE_ID, PUBLIC_EMAILJS_TEMPLATE_ID, PUBLIC_EMAILJS_PUBLIC_KEY } from '$env/static/public';
+
+	const EMAILJS_SERVICE_ID = PUBLIC_EMAILJS_SERVICE_ID;
+	const EMAILJS_TEMPLATE_ID = PUBLIC_EMAILJS_TEMPLATE_ID;
+	const EMAILJS_PUBLIC_KEY = PUBLIC_EMAILJS_PUBLIC_KEY;
 
 	// Handle form submission
 	const handleSubmit = async (event: Event) => {
