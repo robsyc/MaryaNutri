@@ -2,6 +2,9 @@
 	"name": "mn-app",
 	"version": "0.0.1",
 	"type": "module",
+	"overrides": {
+		"tar": "^7.5.7"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
