@@ -79,7 +79,7 @@ npm run format       # Format code with Prettier
 - Test responsive behavior across different screen sizes
 
 ### Internationalization
-- Use the `@sveltekit-i18n` library for translations
+- Use the `sveltekit-i18n` library for translations
 - Keep translation keys organized and meaningful
 - Support multi-language content where applicable
 
