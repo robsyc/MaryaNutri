@@ -21,7 +21,7 @@
 
 	let { children } = $props();
 
-	let showNotification = $state(true);
+	let showNotification = $state(false);
 	let currentLocale = $state('en');
 	let isInitialized = $state(false);
 
