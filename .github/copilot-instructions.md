@@ -6,12 +6,12 @@ MaryaNutri is a web application focused on ending malnutrition and saving lives.
 ## Technology Stack
 - **Framework**: SvelteKit 2.0 with Svelte 5.0
 - **Language**: TypeScript (strict mode enabled)
-- **Styling**: Tailwind CSS with custom animations
+- **Styling**: Tailwind CSS with custom animations, tailwind-merge, clsx
 - **Build Tool**: Vite
 - **Deployment**: Vercel adapter
 - **Internationalization**: sveltekit-i18n for multi-language support
 - **UI Components**: bits-ui, lucide-svelte icons
-- **Animations**: svelte-motion, d3-interpolate
+- **Animations**: svelte-motion (external lib), svelte/motion (built-in), d3-interpolate
 - **Forms**: EmailJS for contact form functionality
 
 ## Development Workflow
@@ -93,7 +93,8 @@ npm run format       # Format code with Prettier
 
 ### Animation Pattern
 When creating animated components:
-- Use `tweened` or `spring` from `svelte/motion` for value animations
+- Use `tweened` or `spring` from Svelte's built-in `svelte/motion` module for value animations
+- Use `svelte-motion` library for more advanced motion features
 - Use IntersectionObserver to trigger animations on scroll
 - Use easing functions from `svelte/easing`
 - See `src/lib/components/CountUp.svelte` for reference
