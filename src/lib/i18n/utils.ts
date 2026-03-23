@@ -14,9 +14,9 @@ export function setStoredLocale(locale: string): void {
 
 export function detectBrowserLocale(): string {
 	if (!browser) return 'en';
-	
+
 	const supportedLocales = ['en', 'nl', 'fr', 'sw'];
 	const browserLang = navigator.language.split('-')[0];
-	
+
 	return supportedLocales.includes(browserLang) ? browserLang : 'en';
-} 
+}

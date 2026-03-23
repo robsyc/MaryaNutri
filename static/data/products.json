@@ -1,63 +1,55 @@
 [
-  {
-    "id": "biscuit",
-    "title": "Protein biscuits",
-    "description": "Delicious high-quality protein biscuits. Fortified with insect extract to increase nutritional value. Made with purpose, backed by science.",
-    "image": "/products/biscuit.jpg",
-    "category": "Snacks",
-    "nutritionalBenefits": [
-      "20 g of protein per serving",
-      "High in fiber (10%)",
-      "Rich in zinc, iron and B-vitamins"
-    ],
-    "ingredients": [
-      "Mealworm extract",
-      "Legume flour"
-    ],
-    "usage": "Open the package and enjoy as a snack.",
-    "targetAge": "2 years and above",
-    "availability": "Contact us for pricing and availability"
-  },
-  {
-    "id": "bar",
-    "title": "High-protein bars",
-    "description": "Delicious high-quality protein-rich bars. Fortified with mealworm and cricket extract to increase nutritional value.",
-    "image": "/products/bar.jpg",
-    "category": "Snacks",
-    "nutritionalBenefits": [
-      "25.9 g of protein",
-      "High in iron (7.4 mg)",
-      "Rich in fiber (18.3 g)",
-      "Free of dairy and eggs",
-      "Insect and plant-based"
-    ],
-    "ingredients": [
-      "Mealworm extract",
-      "Legume flour"
-    ],
-    "usage": "Open the package and enjoy as a snack.",
-    "targetAge": "2 years and above",
-    "availability": "Contact us for pricing and availability"
-  },
-  {
-    "id": "lns",
-    "title": "Lipid-based nutritional supplement",
-    "description": "Tasty and nutritious lipid-based nutritional supplement for children 6 months and above. Backed by science, made with purpose.",
-    "image": "/products/lns.jpeg",
-    "category": "Nutrition",
-    "nutritionalBenefits": [
-      "550-620 kcal",
-      "16 g of protein",
-      "Essential fatty acids"
-    ],
-    "ingredients": [
-      "Mealworm extract",
-      "Peanut oil",
-      "Chickpea",
-      "Banana, vanilla and date"
-    ],
-    "usage": "Ready-to-use, no preparation needed.",
-    "targetAge": "6 months and above",
-    "availability": "Contact us for pricing and availability"
-  }
-] 
+	{
+		"id": "biscuit",
+		"title": "Protein biscuits",
+		"description": "Protein biscuits developed in speculoos-style formats, including insect-protein, vegan, and microalgae concepts.",
+		"image": "/products/biscuit.jpg",
+		"category": "Snacks",
+		"nutritionalBenefits": [
+			"High in protein",
+			"Source of fibre",
+			"Developed for practical nutrition"
+		],
+		"ingredients": [
+			"Selected protein-rich and fibre-rich ingredients. Full formulation available on request."
+		],
+		"usage": "Open the package and enjoy as a snack.",
+		"targetAge": "2 years and above",
+		"availability": "Contact us for pricing and availability"
+	},
+	{
+		"id": "bar",
+		"title": "High-protein bars",
+		"description": "Portable high-protein bars developed for practical daily nutrition.",
+		"image": "/products/bar.jpg",
+		"category": "Snacks",
+		"nutritionalBenefits": ["High in protein", "Source of fibre", "Dairy-free and egg-free"],
+		"ingredients": [
+			"Selected grains, legumes, fibres, and protein sources. Full formulation available on request."
+		],
+		"usage": "Open the package and enjoy as a snack.",
+		"targetAge": "2 years and above",
+		"availability": "Contact us for pricing and availability"
+	},
+	{
+		"id": "lns",
+		"title": "Lipid-based nutritional supplement",
+		"description": "Small-quantity lipid-based nutritional supplement for children aged 6-23 months, developed for supervised nutritional support.",
+		"image": "/products/lns.jpeg",
+		"category": "Nutrition",
+		"nutritionalBenefits": [
+			"Energy-dense",
+			"Provides protein and essential fats",
+			"Includes vitamins and minerals"
+		],
+		"ingredients": [
+			"Diversified protein sources",
+			"Essential fats",
+			"Vitamin-mineral premix",
+			"Full technical specifications available on request."
+		],
+		"usage": "Ready-to-use, no preparation needed.",
+		"targetAge": "6-23 months",
+		"availability": "Contact us for pricing and availability"
+	}
+]

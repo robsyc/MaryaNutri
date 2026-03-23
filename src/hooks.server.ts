@@ -11,15 +11,15 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	if (acceptLanguageHeader) {
 		// Parse the Accept-Language header to get the preferred language
-		const languages = acceptLanguageHeader.split(',').map(lang => {
+		const languages = acceptLanguageHeader.split(',').map((lang) => {
 			const [code, q = '1'] = lang.trim().split(';q=');
 			return { code: code.split('-')[0], quality: parseFloat(q) };
 		});
-		
+
 		// Sort by quality and find the first supported language
 		languages.sort((a, b) => b.quality - a.quality);
 		const supportedLocales = ['en', 'nl', 'fr', 'sw'];
-		
+
 		for (const lang of languages) {
 			if (supportedLocales.includes(lang.code)) {
 				locale = lang.code;
@@ -32,4 +32,4 @@ export const handle: Handle = async ({ event, resolve }) => {
 	await loadTranslations(locale, pathname);
 
 	return resolve(event);
-}; 
+};
