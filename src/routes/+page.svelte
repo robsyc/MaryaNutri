@@ -85,31 +85,36 @@
 							<span class="text-red-700 text-4xl">4.9 MILLION</span> CHILDREN DIED BEFORE AGE 5 IN 2024
 						</Card.Title>
 					</Card.Header>
-					<Card.Content>
+					<Card.Content class="space-y-3 text-left">
 						<p>58% of global under-five deaths occurred in sub-Saharan Africa.</p>
+						<p>
+							Severe acute malnutrition remained a direct cause of child death, with more than
+							100,000 deaths among children aged 1-59 months in 2024.
+						</p>
 					</Card.Content>
 				</Card.Root>
 			</div>
 
 			<div class="grid grid-cols-1 lg:grid-cols-3 gap-20 my-8 md:my-16 lg:my-20 text-3xl">
 				<div class="p-3">
-					<p>CHILD DEATHS IN 2024</p>
+					<p>ANEMIA</p>
 					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={4.9} start={3} suffix="M" duration={1500} />
+						<CountUp target={39.8} start={25} decimals={1} suffix="%" duration={1500} />
 					</p>
-					<p>CHILDREN DIED BEFORE AGE 5</p>
+					<p class="text-xl md:text-2xl lg:text-3xl px-2">
+						CHILDREN AGED 6-59 MONTHS AFFECTED WORLDWIDE (WHO)
+					</p>
 				</div>
 				<div class="p-3">
-					<p>IN 2024</p>
+					<p>CHILDREN UNDER 5 STUNTED IN 2024</p>
 					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={150.2} start={100} duration={1500} />
+						<CountUp target={150.2} start={100} decimals={1} duration={1500} />
 					</p>
-					<p>MILLION CHILDREN WERE STUNTED</p>
 				</div>
 				<div class="p-3">
 					<p>CHILDREN WITH WASTING</p>
 					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={42.8} start={30} duration={1500} />
+						<CountUp target={42.8} start={30} decimals={1} duration={1500} />
 					</p>
 					<p>MILLION IN 2024</p>
 				</div>
@@ -121,17 +126,21 @@
 						<Info size={48} />
 					</Popover.Trigger>
 					<Popover.Content>
-						These statistics are based on the latest data from <a
+						Child mortality figures are from <a
 							href="https://data.unicef.org/resources/levels-and-trends-in-child-mortality-2025/"
 							target="_blank"
 							class="underline">UNICEF</a
-						>
-						and
+						>. Stunting and wasting estimates are from
 						<a
 							href="https://www.who.int/teams/nutrition-and-food-safety/monitoring-nutritional-status-and-food-safety-and-events/joint-child-malnutrition-estimates/latest-estimates"
 							target="_blank"
+							class="underline">WHO joint malnutrition estimates</a
+						>. The anaemia prevalence figure is from
+						<a
+							href="https://www.who.int/news-room/fact-sheets/detail/anaemia"
+							target="_blank"
 							class="underline">WHO</a
-						>
+						>.
 					</Popover.Content>
 				</Popover.Root>
 			</div>
@@ -175,9 +184,14 @@
 									>
 								</Card.Description>
 							</Card.Header>
-							<Card.Content class="py-4">
-								MaryaNutri is a Belgium-based nutrition venture with roots in Kenya, focused on
-								practical child nutrition solutions. Learn more about our products and approach.
+							<Card.Content class="py-4 space-y-3">
+								<p>
+									MaryaNutri is a Belgium-based nutrition venture with roots in Kenya, focused on
+									practical child nutrition solutions.
+								</p>
+								<p class="text-sm text-muted-foreground">
+									Learn more about our products and approach.
+								</p>
 							</Card.Content>
 							<Card.Footer>
 								<Button href="/products" class="mx-auto md:mx-0 md:mr-4">Our Products</Button>

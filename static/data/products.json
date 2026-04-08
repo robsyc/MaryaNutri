@@ -33,8 +33,8 @@
 	},
 	{
 		"id": "lns",
-		"title": "Lipid-based nutritional supplement",
-		"description": "Small-quantity lipid-based nutritional supplement for children aged 6-23 months, developed for supervised nutritional support.",
+		"title": "Lipid-based nutrient supplement",
+		"description": "Small-quantity lipid-based nutrient supplement for children aged 6 months and older, developed for supervised nutritional support. Our LNS is formulated with carefully selected non-GMO protein sources.",
 		"image": "/products/lns.jpeg",
 		"category": "Nutrition",
 		"nutritionalBenefits": [
@@ -48,8 +48,8 @@
 			"Vitamin-mineral premix",
 			"Full technical specifications available on request."
 		],
-		"usage": "Ready-to-use, no preparation needed.",
-		"targetAge": "6-23 months",
+		"usage": "Ready to use with no cooking or dilution required. Knead the sachet, open it, and feed directly or mix with the child's prepared food.",
+		"targetAge": "6 months and older",
 		"availability": "Contact us for pricing and availability"
 	}
 ]

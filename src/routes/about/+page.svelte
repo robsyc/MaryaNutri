@@ -7,7 +7,7 @@
 		{
 			icon: Baby,
 			label: 'Child-safety',
-			description: 'Our products are suitable for children of 6 month and older'
+			description: 'Our products are suitable for children of 6 months and older'
 		},
 		{
 			icon: Salad,
@@ -30,13 +30,13 @@
 			icon: Sprout,
 			label: 'Sustainability',
 			description:
-				"Insect farming has a significantly lower environmental impact. Additionally, we're working on a zero-waste production process through biodegradable packaging."
+				'Insect farming has a significantly lower environmental impact. Across our wider product portfolio, we also work with alternative proteins including insect-derived ingredients, while our LNS is formulated with carefully selected non-GMO protein sources.'
 		},
 		{
 			icon: BookOpenCheck,
 			label: 'Accessible & Transparent',
 			description:
-				"Designed to be affordable and easy to prepare, simply add water and mix! We're also transparent about our ingredients, production process and the impact of our products."
+				"Designed to be affordable, ready to use, and easy to serve, our LNS-SQ requires no cooking or dilution. Simply knead the sachet, open it, and feed directly or mix with the child's prepared food. We are also transparent about our ingredients and production process."
 		}
 	] as const;
 </script>
@@ -66,7 +66,9 @@
 			</p>
 			<p class="my-5 md:mt-4">
 				This work responds to an urgent need: 4.9 million children died before age 5 in 2024, and
-				58% of those deaths occurred in sub-Saharan Africa.
+				58% of global under-five deaths occurred in sub-Saharan Africa. Sub-Saharan Africa remains
+				the only region where the number of stunted children continues to increase, with 62 million
+				stunted children in the latest UNICEF data.
 			</p>
 		</div>
 	</div>
