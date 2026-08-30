@@ -86,7 +86,9 @@
 						</Card.Title>
 					</Card.Header>
 					<Card.Content class="space-y-3 text-left">
-						<p>58% of global under-five deaths occurred in sub-Saharan Africa.</p>
+						<p>
+							58% of global under-five deaths occurred in sub-Saharan Africa.
+						</p>
 						<p>
 							Severe acute malnutrition remained a direct cause of child death, with more than
 							100,000 deaths among children aged 1-59 months in 2024.
@@ -95,28 +97,30 @@
 				</Card.Root>
 			</div>
 
-			<div class="grid grid-cols-1 lg:grid-cols-3 gap-20 my-8 md:my-16 lg:my-20 text-3xl">
-				<div class="p-3">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-14 lg:gap-20 my-8 md:my-16 lg:my-20 text-2xl md:text-3xl">
+				<div class="p-3 flex flex-col items-center">
 					<p>ANEMIA</p>
-					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={39.8} start={25} decimals={1} suffix="%" duration={1500} />
-					</p>
-					<p class="text-xl md:text-2xl lg:text-3xl px-2">
-						CHILDREN AGED 6-59 MONTHS AFFECTED WORLDWIDE (WHO)
+					<p class="text-6xl my-4 text-red-700">39.8%</p>
+					<p class="text-base md:text-xl lg:text-2xl px-2 text-center">
+						CHILDREN AGED 6-59 MONTHS<br />AFFECTED WORLDWIDE (WHO)
 					</p>
 				</div>
-				<div class="p-3">
+				<div class="p-3 flex flex-col items-center">
 					<p>CHILDREN UNDER 5 STUNTED IN 2024</p>
-					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={150.2} start={100} decimals={1} duration={1500} />
-					</p>
+					<p class="text-6xl my-4 text-red-700">150.2M</p>
 				</div>
-				<div class="p-3">
+				<div class="p-3 flex flex-col items-center">
 					<p>CHILDREN WITH WASTING</p>
-					<p class="text-7xl my-4 text-red-700">
-						<CountUp target={42.8} start={30} decimals={1} duration={1500} />
+					<p class="text-6xl my-4 text-red-700">42.8M</p>
+					<p class="text-base md:text-xl lg:text-2xl text-center">MILLION IN 2024</p>
+				</div>
+				<div class="p-3 flex flex-col items-center">
+					<p class="text-center font-bold mb-2">
+						SUB-SAHARAN AFRICA
 					</p>
-					<p>MILLION IN 2024</p>
+					<p class="text-base md:text-xl lg:text-2xl text-center">
+						continues to carry a very high share of the global child survival burden.
+					</p>
 				</div>
 			</div>
 
@@ -125,22 +129,86 @@
 					<Popover.Trigger>
 						<Info size={48} />
 					</Popover.Trigger>
-					<Popover.Content>
-						Child mortality figures are from <a
-							href="https://data.unicef.org/resources/levels-and-trends-in-child-mortality-2025/"
-							target="_blank"
-							class="underline">UNICEF</a
-						>. Stunting and wasting estimates are from
-						<a
-							href="https://www.who.int/teams/nutrition-and-food-safety/monitoring-nutritional-status-and-food-safety-and-events/joint-child-malnutrition-estimates/latest-estimates"
-							target="_blank"
-							class="underline">WHO joint malnutrition estimates</a
-						>. The anaemia prevalence figure is from
-						<a
-							href="https://www.who.int/news-room/fact-sheets/detail/anaemia"
-							target="_blank"
-							class="underline">WHO</a
-						>.
+					<Popover.Content
+						class="w-[320px] sm:w-[400px] md:w-[500px] lg:w-[600px] max-w-full"
+					>
+						<div class="space-y-2">
+							<div class="font-semibold mb-1">Citations & Data Sources</div>
+							<ul class="list-disc list-inside text-sm space-y-1">
+								<li>
+									<span class="font-medium">Under-five deaths; 4.9 million deaths; broad mortality context:</span>
+									<br />
+									<a href="https://data.unicef.org/resources/levels-and-trends-in-child-mortality-2025/"
+										target="_blank"
+										class="underline"
+									>UNICEF Data – Levels and trends in child mortality 2025</a>
+								</li>
+								<li>
+									<span class="font-medium">Under-five deaths; SSA share; severe acute malnutrition:</span>
+									<br />
+									<a href="https://data.unicef.org/wp-content/uploads/2026/03/UNIGME-Child-Mortality-Report-2025.pdf"
+										target="_blank"
+										class="underline"
+									>UN IGME Child Mortality Report 2025 (PDF)</a>
+								</li>
+								<li>
+									<span class="font-medium">Quick online under-five mortality verification:</span>
+									<br />
+									<a href="https://data.unicef.org/topic/child-survival/under-five-mortality/"
+										target="_blank"
+										class="underline"
+									>UNICEF Data – Under-five mortality</a>
+								</li>
+								<li>
+									<span class="font-medium">2024 stunting & wasting figures:</span>
+									<br />
+									<a href="https://www.who.int/teams/nutrition-and-food-safety/monitoring-nutritional-status-and-food-safety-and-events/joint-child-malnutrition-estimates/latest-estimates"
+										target="_blank"
+										class="underline"
+									>WHO Joint Child Malnutrition Estimates - latest estimates</a>
+								</li>
+								<li>
+									<span class="font-medium">JME data portal:</span>
+									<br />
+									<a href="https://www.who.int/data/gho/data/themes/topics/joint-child-malnutrition-estimates-unicef-who-wb"
+										target="_blank"
+										class="underline"
+									>WHO / UNICEF / World Bank JME data portal</a>
+								</li>
+								<li>
+									<span class="font-medium">Malnutrition data (overview):</span>
+									<br />
+									<a href="https://data.unicef.org/topic/nutrition/malnutrition/"
+										target="_blank"
+										class="underline"
+									>UNICEF Data – Malnutrition in children</a>
+								</li>
+								<li>
+									<span class="font-medium">Anaemia in children (micronutrient deficiency indicator):</span>
+									<br />
+									<a href="https://www.who.int/data/gho/data/themes/topics/anaemia_in_women_and_children"
+										target="_blank"
+										class="underline"
+									>WHO – Anaemia in women and children</a>
+								</li>
+								<li>
+									<span class="font-medium">Anaemia explainer fact sheet:</span>
+									<br />
+									<a href="https://www.who.int/news-room/fact-sheets/detail/anaemia"
+										target="_blank"
+										class="underline"
+									>WHO Anaemia fact sheet</a>
+								</li>
+								<li>
+									<span class="font-medium">Underweight (technical reference):</span>
+									<br />
+									<a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/gho-jme-underweight-prevalence"
+										target="_blank"
+										class="underline"
+									>WHO underweight indicator page</a>
+								</li>
+							</ul>
+						</div>
 					</Popover.Content>
 				</Popover.Root>
 			</div>
