@@ -17,14 +17,14 @@ interface NewsItem {
 export const load: PageLoad = async ({ params, fetch }) => {
 	const response = await fetch('/data/news.json');
 	const news: NewsItem[] = await response.json();
-	
-	const article = news.find(n => n.id === params.id);
-	
+
+	const article = news.find((n) => n.id === params.id);
+
 	if (!article) {
 		throw error(404, 'Article not found');
 	}
-	
+
 	return {
 		article
 	};
-}; 
+};

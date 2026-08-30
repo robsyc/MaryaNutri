@@ -17,14 +17,14 @@ interface Product {
 export const load: PageLoad = async ({ params, fetch }) => {
 	const response = await fetch('/data/products.json');
 	const products: Product[] = await response.json();
-	
-	const product = products.find(p => p.id === params.id);
-	
+
+	const product = products.find((p) => p.id === params.id);
+
 	if (!product) {
 		throw error(404, 'Product not found');
 	}
-	
+
 	return {
 		product
 	};
-}; 
+};
